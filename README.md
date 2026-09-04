@@ -43,6 +43,7 @@ built yet.
 | [AGENTS.md](AGENTS.md) | Project and content rules, independent of which AI is used. |
 | [CLAUDE.md](CLAUDE.md) | Behavioral rules specific to Claude agents working in this repo. |
 | [Concept.md](Concept.md) | Ideas for how the digest gets produced — tools, agents, workflows (not yet built). |
+| [Themas.md](Themas.md) | Raw, unrefined topic ideas awaiting development into an entry. |
 
 ## Status
 

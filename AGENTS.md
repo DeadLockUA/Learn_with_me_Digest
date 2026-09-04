@@ -20,10 +20,10 @@ assistant, then reviewed by the owner before it's considered final.
 - Topics aren't picked in isolation — each one should connect to other
   entries (follow-up, contrast, deeper dive). When a topic is agreed, sketch
   how it could branch into further entries, not just the one at hand.
-- New topic ideas are agreed with the owner before drafting; there's no
-  separate topic backlog file yet. (For *how* entries get produced — tools,
-  agents, workflow — see [Concept.md](Concept.md); it doesn't track topic
-  ideas.)
+- New topic ideas are agreed with the owner before drafting. Raw, unrefined
+  ideas are captured in [Themas.md](Themas.md); it's a scratch backlog, not
+  agreed topics. (For *how* entries get produced — tools, agents, workflow —
+  see [Concept.md](Concept.md); it doesn't track topic ideas either.)
 
 ## 3. Publishing channels
 
