@@ -23,23 +23,49 @@ A candidate end-to-end flow for one digest entry:
 6. **Publish** — merge to the main branch (and, later, whatever rendering
    target is chosen — see Open questions).
 
+## Publishing channels
+
+The digest runs in two parallel formats, not one:
+
+- **Long** — full entry on the personal blog.
+- **Short** — a condensed take for LinkedIn.
+
+Rules for the pair:
+
+- Every LinkedIn post links back to its long-form blog entry.
+- Every LinkedIn post closes with a recurring engagement line — something in
+  the spirit of "always happy to answer questions within my knowledge" and
+  "if there's a specific topic you want covered, comment and we'll dig into
+  it next time." Exact wording can vary per post; the two functions (invite
+  questions, invite topic requests) should always be present.
+
+## Topic continuity
+
+- Topics aren't one-offs — each one should connect to the others (follow-up,
+  contrast, deeper dive) rather than being picked in isolation.
+- When a topic is agreed, sketch the follow-up chain right away: how it could
+  branch into 2–3 future entries, not just how to write the one at hand.
+
 ## Agents & roles
 
-Options, not yet decided between:
+Draft roster (not yet built):
 
-- **Single agent, sequential** — one Claude session does research → draft →
-  self-check in one pass. Simplest; no orchestration to maintain.
-- **Split roles** — separate research and drafting steps (e.g. a Research
-  agent hands sourced notes to a Writer agent) so drafting isn't also
-  responsible for judging its own sources.
-- **Add a Reviewer/critic pass** — a second agent (or the `code-review`-style
-  pattern, adapted) checks the draft against AGENTS.md §4–§5 before it goes
-  to the owner, to catch style/sourcing issues before human review time is
-  spent on them.
+- **Editor** — writes and edits the entry (both formats). Output targets the
+  public reader, not the owner — it is **not** bound by this repo's own
+  house style (CLAUDE.md's terse/no-fluff output rules govern how an agent
+  talks to the owner in-session, not the digest content itself).
+- **Researcher** — searches the web for sourcing material.
+- **Designer** — generates the graphical part of a post. Needs a GPT/OpenAI
+  API key wired in.
+- **Engineer** — works out a solution/technical answer from given inputs,
+  when an entry needs one (e.g. a worked example, a fix, a technique).
+- **Blogger** — publishes the finished entry to the blog and to LinkedIn.
 
-Multi-agent orchestration (e.g. the `Workflow` tool) is only worth it once
-there's a real bottleneck a single sequential agent can't clear — not a
-default to reach for from day one.
+Open: single sequential agent doing all of the above vs. split roles vs.
+adding a reviewer/critic pass before publish. Multi-agent orchestration
+(e.g. the `Workflow` tool) is only worth it once there's a real bottleneck a
+single sequential agent can't clear — not a default to reach for from day
+one.
 
 ## Trigger mechanism
 
@@ -60,9 +86,11 @@ default to reach for from day one.
 
 ## Open questions
 
-- Publishing target: stays as markdown in this repo, or gets rendered
-  somewhere else (static site, newsletter, RSS)?
+- Does this repo hold both formats (long + short), or just the long-form
+  source with the LinkedIn version generated at publish time?
 - Cadence: fixed schedule vs. ad hoc as topics come up?
 - Where does the self-check/review step actually live — same session as
   drafting, a separate agent, or folded into owner review only?
 - Does research need a fixed source allowlist, or is open web search fine?
+- Designer/GPT key: stored how (env var, secrets manager), and scoped to
+  which agent only?
