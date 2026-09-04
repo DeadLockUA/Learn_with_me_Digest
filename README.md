@@ -9,6 +9,11 @@ I pick the topics and steer direction; AI assistants (model-agnostic — Claude,
 GPT, or others) research and draft each entry. Every entry gets reviewed
 before it's considered final.
 
+Each entry ships in two formats: a long-form piece on my personal blog, and a
+condensed take on LinkedIn that links back to it. Topics aren't one-offs —
+each one is picked with an eye on how it connects to and can branch into
+future entries.
+
 ## Topics
 
 - **Quality** — QA philosophy, process, and practices.
@@ -18,11 +23,13 @@ before it's considered final.
 
 ## How it works
 
-1. The owner picks a topic (scope defined in [AGENTS.md](AGENTS.md) §2).
-2. An AI assistant researches and drafts the entry, following the rules in
-   [AGENTS.md](AGENTS.md) (project/content rules) and, for Claude specifically,
-   [CLAUDE.md](CLAUDE.md) (agent behavior rules).
-3. The draft is reviewed before merging.
+1. The owner picks a topic, including how it connects to other entries
+   (scope defined in [AGENTS.md](AGENTS.md) §2).
+2. An AI assistant researches and drafts both formats — blog and LinkedIn
+   (§3) — following the rules in [AGENTS.md](AGENTS.md) (project/content
+   rules) and, for Claude specifically, [CLAUDE.md](CLAUDE.md) (agent
+   behavior rules).
+3. Both drafts are reviewed before merging.
 
 Today this is a manual, owner-directed process. The tools/agents/automation
 that could run this pipeline (research → draft → self-check → review →

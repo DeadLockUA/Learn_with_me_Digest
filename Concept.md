@@ -14,37 +14,32 @@ A candidate end-to-end flow for one digest entry:
    topic and kicks it off manually).
 2. **Research** — an agent gathers sources for the chosen topic/subtopic
    (web search/fetch, or a specific source the owner points at).
-3. **Draft** — an agent writes the entry against the style guide in
-   AGENTS.md §4.
+3. **Draft** — an agent writes both formats (blog + LinkedIn, AGENTS.md §3)
+   against the style guide in AGENTS.md §5.
 4. **Self-check** — a pass that verifies claims are sourced, the entry stays
-   on one topic, and no fabricated facts/citations slipped in (AGENTS.md §5).
-5. **Owner review** — human review/edit before the entry is treated as final
-   (AGENTS.md §3 step 5).
+   on one topic, and no fabricated facts/citations slipped in (AGENTS.md §6).
+5. **Owner review** — human review/edit before either format is treated as
+   final (AGENTS.md §4 step 5).
 6. **Publish** — merge to the main branch (and, later, whatever rendering
    target is chosen — see Open questions).
 
-## Publishing channels
+## Publishing channels — implementation
 
-The digest runs in two parallel formats, not one:
+The dual-format/cross-link/CTA rules themselves are policy, not an idea —
+see AGENTS.md §3. What's still open is how to *build* it:
 
-- **Long** — full entry on the personal blog.
-- **Short** — a condensed take for LinkedIn.
+- Does the Editor draft both formats from one pass, or does drafting the
+  long form come first with the short form derived from it?
+- Is the LinkedIn CTA line templated (rotate through a fixed set of variants)
+  or freshly written per post within the two required functions?
+- Where does the cross-link get inserted — placeholder at draft time,
+  resolved once the blog URL exists post-publish?
 
-Rules for the pair:
+## Topic continuity — implementation
 
-- Every LinkedIn post links back to its long-form blog entry.
-- Every LinkedIn post closes with a recurring engagement line — something in
-  the spirit of "always happy to answer questions within my knowledge" and
-  "if there's a specific topic you want covered, comment and we'll dig into
-  it next time." Exact wording can vary per post; the two functions (invite
-  questions, invite topic requests) should always be present.
-
-## Topic continuity
-
-- Topics aren't one-offs — each one should connect to the others (follow-up,
-  contrast, deeper dive) rather than being picked in isolation.
-- When a topic is agreed, sketch the follow-up chain right away: how it could
-  branch into 2–3 future entries, not just how to write the one at hand.
+The continuity rule itself is policy — see AGENTS.md §2. Open: does the
+follow-up chain get written down anywhere durable (a running list per topic
+thread), or does the owner just carry it between sessions for now?
 
 ## Agents & roles
 
@@ -82,7 +77,7 @@ one.
 - Drafting/editing happens as normal file edits in this repo (no special
   CMS).
 - Git: one branch per entry (or per batch), PR opened for owner review,
-  merged by the owner (AGENTS.md §7).
+  merged by the owner (AGENTS.md §8).
 
 ## Open questions
 
