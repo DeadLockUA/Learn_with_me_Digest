@@ -17,13 +17,14 @@ owner before it's considered final.
 - Four recurring topics only: Quality, Development, Testing, AI.
 - An entry stays focused on one topic — don't blend unrelated subjects into a
   single entry.
-- New topic ideas go into [Concept.md](Concept.md) as a backlog item first,
-  not straight into a published entry.
+- New topic ideas are agreed with the owner before drafting; there's no
+  separate topic backlog file yet. (For *how* entries get produced — tools,
+  agents, workflow — see [Concept.md](Concept.md); it doesn't track topic
+  ideas.)
 
 ## 3. Content workflow
 
-1. Pick an idea from the [Concept.md](Concept.md) backlog, or propose a new
-   one there first.
+1. Agree a topic/subtopic with the owner (see §2).
 2. Research and verify claims before drafting — don't write from assumption.
 3. Draft the entry following the style guide (§4).
 4. Flag anything uncertain or opinion-based instead of stating it as fact.
@@ -47,9 +48,10 @@ owner before it's considered final.
 ## 6. Repository structure
 
 No content structure is finalized yet — this section will be updated once the
-first entries define it (see [Concept.md](Concept.md) for structure ideas
-under consideration). Until then, don't invent directory layouts unprompted;
-propose them as a backlog item.
+first entries define it. Until then, don't invent directory layouts
+unprompted; raise structure proposals with the owner directly. (Content
+structure isn't tracked in [Concept.md](Concept.md) — that file covers the
+production pipeline: tools, agents, workflow.)
 
 ## 7. Git workflow
 

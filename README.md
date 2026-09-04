@@ -18,11 +18,16 @@ before it's considered final.
 
 ## How it works
 
-1. A topic/idea is picked from the backlog in [Concept.md](Concept.md).
+1. The owner picks a topic (scope defined in [AGENTS.md](AGENTS.md) §2).
 2. An AI assistant researches and drafts the entry, following the rules in
    [AGENTS.md](AGENTS.md) (project/content rules) and, for Claude specifically,
    [CLAUDE.md](CLAUDE.md) (agent behavior rules).
 3. The draft is reviewed before merging.
+
+Today this is a manual, owner-directed process. The tools/agents/automation
+that could run this pipeline (research → draft → self-check → review →
+publish) are tracked as ideas in [Concept.md](Concept.md) — nothing there is
+built yet.
 
 ## Project docs
 
@@ -30,7 +35,7 @@ before it's considered final.
 |---|---|
 | [AGENTS.md](AGENTS.md) | Project and content rules, independent of which AI is used. |
 | [CLAUDE.md](CLAUDE.md) | Behavioral rules specific to Claude agents working in this repo. |
-| [Concept.md](Concept.md) | Backlog of ideas not yet implemented. |
+| [Concept.md](Concept.md) | Ideas for how the digest gets produced — tools, agents, workflows (not yet built). |
 
 ## Status
 
