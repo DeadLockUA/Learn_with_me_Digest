@@ -53,6 +53,10 @@ Rules:
 - The LinkedIn version includes hashtags to help reach (owner, 2026-09-14).
   Tags are picked per entry — specific and on-topic (recurring topic +
   entry angle), not a copy-pasted boilerplate set reused across posts.
+- The LinkedIn version is plain text, never Markdown (owner, 2026-09-14) —
+  LinkedIn's API doesn't render Markdown; `**bold**`, `_italic_`, `# headers`,
+  etc. post as literal characters. No Markdown syntax anywhere in the
+  LinkedIn file, including in list bullets/CTAs.
 
 ## 4. Content workflow
 

@@ -55,3 +55,50 @@ authorization to post to LinkedIn. Publisher must explicitly ask the owner
 for a go-ahead immediately before making the LinkedIn API call, every time,
 even within the same run that just finished steps 1–2 above. Only on
 receiving that explicit go-ahead does Publisher make the LinkedIn API call.
+
+Before calling, re-check the LinkedIn file itself one last time for
+Markdown syntax (`**`, `_..._`, `#`) — it posts as literal characters, not
+formatting (AGENTS.md §3). If found, stop and report rather than posting
+broken text; don't silently strip it yourself, since it should already
+have been caught earlier in the pipeline.
+
+## LinkedIn API reference (verified 2026-09-14, li-lms-2026-08)
+
+Text-only post: `POST https://api.linkedin.com/rest/posts`, headers
+`Authorization: Bearer $LINKEDIN_ACCESS_TOKEN`,
+`X-Restli-Protocol-Version: 2.0.0`, `LinkedIn-Version: 202608` (or later —
+check for a newer YYYYMM if this is stale), `Content-Type: application/json`.
+Body:
+```json
+{
+  "author": "<LINKEDIN_MEMBER_URN>",
+  "commentary": "<full LinkedIn file text>",
+  "visibility": "PUBLIC",
+  "distribution": {"feedDistribution": "MAIN_FEED", "targetEntities": [], "thirdPartyDistributionChannels": []},
+  "lifecycleState": "PUBLISHED",
+  "isReshareDisabledByAuthor": false
+}
+```
+201 response; the created post's URN is in the `x-restli-id` response
+header (e.g. `urn:li:share:...`).
+
+**With the entry's image attached** (the M5 pilot's first post was
+published without one — don't repeat that):
+1. `POST https://api.linkedin.com/rest/images?action=initializeUpload`,
+   same auth/version headers, body
+   `{"initializeUploadRequest": {"owner": "<LINKEDIN_MEMBER_URN>"}}` →
+   response has `value.uploadUrl` and `value.image` (an
+   `urn:li:image:...`).
+2. Upload the actual image file (from `assets/images/entries/`) as the
+   raw binary body of a `PUT` to that `uploadUrl` (include the
+   `Authorization` header too).
+3. Create the post as above, but with a `content.media` object instead of
+   a bare `commentary`-only body:
+   ```json
+   "content": {"media": {"id": "<the urn:li:image:... from step 1>", "altText": "<short description>"}}
+   ```
+   (added alongside `author`/`commentary`/`visibility`/`distribution`/
+   `lifecycleState`/`isReshareDisabledByAuthor`, not replacing them.)
+
+CRITICAL: never print/log/echo the access token anywhere — reference it
+only as "the token."

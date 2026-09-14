@@ -26,7 +26,7 @@ Where this could go next:
 - AI: who/what handles the triage bottleneck as coverage grows.
 - Processes: who owns the call on what to trust.
 
-**Comment which of these (or another angle) you want covered next.**
+Comment which of these (or another angle) you want covered next.
 
 Always happy to answer questions within my knowledge.
 

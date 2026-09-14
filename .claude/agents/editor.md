@@ -23,7 +23,10 @@ the real URL later.
    `development`/`testing`/`ai`/`processes` — and `related_posts`, per
    AGENTS.md §8/§2 continuity).
 3. Derive the LinkedIn short version from it: link back to the blog
-   (placeholder for now), both standing CTAs present (AGENTS.md §3).
+   (placeholder for now), both standing CTAs present (AGENTS.md §3). Plain
+   text only — no Markdown syntax (`**bold**`, `_italic_`, `#` headers,
+   etc.) anywhere in the LinkedIn file; LinkedIn's API posts it literally,
+   asterisks and all (AGENTS.md §3).
 4. Flag anything uncertain or opinion-based instead of stating it as fact
    (AGENTS.md §4 step 4, §6).
 5. Hand the draft to Critic. Do not present it to the owner directly —

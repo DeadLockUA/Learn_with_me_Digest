@@ -22,7 +22,9 @@ component table, "Critic ... draft written" gate).
    blended subjects beyond what was actually agreed, and no topic tagged on
    just for visibility.
 5. Check both formats meet AGENTS.md §3 (cross-link present, both standing
-   CTAs present in the LinkedIn version).
+   CTAs present in the LinkedIn version, hashtags present and on-topic, and
+   NO Markdown syntax anywhere in the LinkedIn file — it posts as literal
+   characters, not formatting).
 6. Report findings. If issues found, send back to Editor for revision —
    Critic does not fix the draft itself.
 7. Once clean, hand the checked draft to the owner for the text/draft
