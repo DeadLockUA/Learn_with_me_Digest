@@ -91,4 +91,6 @@ None outstanding.
 ## Remaining build tasks (not open questions — no further owner decision needed)
 
 - Owner completes the LinkedIn app/OAuth steps above.
-- GitHub Actions workflow file for Jekyll deploy not yet written.
+- GitHub Actions workflow file for Jekyll deploy: written
+  (`.github/workflows/deploy.yml`, M3). First real deploy run still pending —
+  workflow lives on a local feature branch, not yet merged to main.

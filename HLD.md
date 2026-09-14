@@ -138,7 +138,9 @@ sequenceDiagram
 
 - Owner: create LinkedIn Developer app, get `w_member_social` scope,
   complete OAuth, store token in `.env`.
-- Write the GitHub Actions workflow file for Jekyll deploy.
+- GitHub Actions workflow file for Jekyll deploy: written
+  (`.github/workflows/deploy.yml`, M3). First real deploy run still pending —
+  workflow lives on a local feature branch, not yet merged to main.
 
 ## Out of scope / open
 
