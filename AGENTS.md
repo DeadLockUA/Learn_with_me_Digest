@@ -2,8 +2,13 @@
 
 > These rules apply to **any** AI assistant working in this repo (Claude, GPT,
 > Gemini, or others) — nothing here is tied to a specific vendor's tool.
-> Assistant-specific behavior (persona, prompt style, output formatting) lives
-> in that tool's own config, e.g. [CLAUDE.md](CLAUDE.md) for Claude.
+> Persona, tone, and output-formatting rules for all assistants live in
+> [BEHAVIOUR.md](BEHAVIOUR.md), imported at the bottom of this file. **Keep
+> that `@BEHAVIOUR.md` line** — it mechanically inlines those rules into every
+> session *and every subagent dispatch* before the first token; a prose
+> "read that file" instruction only reaches an agent that chooses to spend a
+> `Read` call. Vendor configs (e.g. [CLAUDE.md](CLAUDE.md)) just import this
+> file, which in turn imports `BEHAVIOUR.md`.
 
 ## 1. Project overview
 
@@ -78,3 +83,12 @@ production pipeline: tools, agents, workflow.)
 - Work on a feature branch per entry or per batch of related entries.
 - Write clear, descriptive commit messages.
 - Changes are reviewed by the repo owner before merging.
+
+## 9. Prefix canary
+
+- After the [BEHAVIOUR.md](BEHAVIOUR.md) model-name prefix, append
+  `Learn_with_me_Digest: `, e.g. `Sonnet 5 - Learn_with_me_Digest: `. This
+  confirms `AGENTS.md` itself loaded (as opposed to only `BEHAVIOUR.md` via
+  the import chain).
+
+@BEHAVIOUR.md
