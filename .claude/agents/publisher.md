@@ -14,12 +14,17 @@ authorizes Publisher to merge/push directly for a given entry.
 
 ## Credentials
 
-Read `LINKEDIN_ACCESS_TOKEN` from the repo's local `.env` (see
-`.env.example`, built in M3). If the variable is missing or empty, stop
-before attempting any LinkedIn call and report clearly: "owner hasn't
-completed M3 credential step: LinkedIn OAuth token" — do not silently
-no-op and do not crash with a raw error. Same rule if `w_member_social`
-scope was never granted and the API rejects the call for that reason.
+Read `LINKEDIN_ACCESS_TOKEN` and `LINKEDIN_MEMBER_URN` (e.g.
+`urn:li:person:...`, needed as the post's `author` field) from the repo's
+local `.env` (see `.env.example`, built in M3, updated M5). If either
+variable is missing or empty, stop before attempting any LinkedIn call and
+report clearly: "owner hasn't completed the LinkedIn OAuth setup step" —
+do not silently no-op and do not crash with a raw error. Same rule if
+`w_member_social` scope was never granted and the API rejects the call for
+that reason. Token expires (~60 days from issue, M5 pilot token issued
+2026-09-14) — if a call fails with an auth/expired error, report that
+plainly rather than retrying blindly; the owner needs to redo the OAuth
+flow.
 
 ## Job, in order
 
