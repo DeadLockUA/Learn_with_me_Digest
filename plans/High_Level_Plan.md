@@ -26,11 +26,19 @@ block start (all three show "None outstanding" as of 2026-09-14).
   Actions run — no Ruby on the dev machine.
 - Status: complete. See [M2 — Jekyll site skeleton.md](M2%20—%20Jekyll%20site%20skeleton.md).
 
-## M3 — Publish infra
-- Write GitHub Actions workflow: deploy Jekyll on merge to main.
-- Owner: create LinkedIn Developer app, get `w_member_social` scope, complete OAuth.
-- Owner: obtain OmniRoute API key.
-- Both secrets stored in local gitignored `.env`.
+## M3 — Publish infra (done, 2026-09-14)
+- GitHub Actions workflow (`.github/workflows/deploy.yml`) deploys Jekyll on
+  push to main. First real deploy succeeded — site live at
+  https://deadlockua.github.io/Learn_with_me_Digest/.
+- Decided (owner): repo made **public** — GitHub Pages isn't available on
+  private repos under the account's current plan. Checked history for
+  secrets first; none found.
+- `.env.example` committed as a template for `LINKEDIN_ACCESS_TOKEN` /
+  `OMNIROUTE_API_KEY`; `.env` itself stays gitignored.
+- Still open (owner-only, not blocking M4 code): LinkedIn Developer app +
+  OAuth, OmniRoute API key — needed before Designer/Publisher can be
+  exercised for real.
+- Status: complete. See [M3 — Publish infra.md](M3%20—%20Publish%20infra.md).
 
 ## M4 — Agent roster implementation
 - Build the six subagent roles (Topic Manager, Researcher, Editor, Critic,

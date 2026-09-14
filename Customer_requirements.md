@@ -91,6 +91,6 @@ None outstanding.
 ## Remaining build tasks (not open questions — no further owner decision needed)
 
 - Owner completes the LinkedIn app/OAuth steps above.
-- GitHub Actions workflow file for Jekyll deploy: written
-  (`.github/workflows/deploy.yml`, M3). First real deploy run still pending —
-  workflow lives on a local feature branch, not yet merged to main.
+- Owner obtains the OmniRoute API key.
+- GitHub Actions workflow file for Jekyll deploy: written, merged, first
+  real deploy succeeded 2026-09-14 (M3, done).

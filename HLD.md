@@ -138,9 +138,13 @@ sequenceDiagram
 
 - Owner: create LinkedIn Developer app, get `w_member_social` scope,
   complete OAuth, store token in `.env`.
-- GitHub Actions workflow file for Jekyll deploy: written
-  (`.github/workflows/deploy.yml`, M3). First real deploy run still pending —
-  workflow lives on a local feature branch, not yet merged to main.
+- GitHub Actions workflow file for Jekyll deploy: written and merged to
+  main (`.github/workflows/deploy.yml`, M3). First real deploy succeeded
+  2026-09-14 — site live at https://deadlockua.github.io/Learn_with_me_Digest/.
+- Repo visibility: changed private → **public** (2026-09-14, owner
+  decision) — required to unblock GitHub Pages, which the account's plan
+  doesn't support on private repos. History checked for secrets before the
+  switch; none found.
 
 ## Out of scope / open
 
