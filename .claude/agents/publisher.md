@@ -82,6 +82,23 @@ Body:
 201 response; the created post's URN is in the `x-restli-id` response
 header (e.g. `urn:li:share:...`).
 
+**CRITICAL — escape LinkedIn's "little" text format reserved characters
+before sending, or the post silently truncates.** The `commentary` field
+is not raw plain text — LinkedIn parses it as "little" format, and ANY
+occurrence of a reserved character used as normal punctuation (not as an
+intended element) must be backslash-escaped or the parser stops there,
+silently truncating everything after it (confirmed 2026-09-14: the M5
+pilot's first attempt with an image cut off mid-post at the first
+unescaped `(`, the API still returned `201`, no error). Reserved
+characters: `| { } @ [ ] ( ) < > # \ * _ ~`. In practice for this
+project's entries, the ones that actually show up as plain punctuation are
+parentheses — escape every literal `(` as `\(` and `)` as `\)`. Leave
+intentional `#hashtag` words alone (that's the real `HashtagElement`
+syntax, not something to escape). Do this escaping on a COPY of the text
+used only for the API payload — never edit the committed LinkedIn file
+itself to add backslashes, that file should stay normal readable
+punctuation.
+
 **With the entry's image attached** (the M5 pilot's first post was
 published without one — don't repeat that):
 1. `POST https://api.linkedin.com/rest/images?action=initializeUpload`,
