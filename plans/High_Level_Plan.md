@@ -52,18 +52,43 @@ block start (all three show "None outstanding" as of 2026-09-14).
   Manager/Publisher) retired in favor of HLD.md as source of truth.
 - Status: complete. See [M4 — Agent roster implementation.md](M4%20—%20Agent%20roster%20implementation.md).
 
-## M5 — Pilot entry (end-to-end dry run)
-- Run one entry through the full flow manually, owner in the loop at every gate.
-- Verify: sourcing/citation rules (AGENTS.md §6), dual-format output + CTA lines
-  (AGENTS.md §3), Critic catches scope-drift/fabrication.
-- Decided (owner, 2026-09-14): this pilot's topic/content is `First_Post.png`
-  (owner's existing screenshot, root of repo, untracked/not yet committed) —
-  first entry of an ongoing series. Topic still needs owner agreement per
-  AGENTS.md §2/§4 before drafting starts.
+## M5 — Pilot entry (done, 2026-09-14)
+- Ran the full pipeline for real: topic-manager proposed "AI-assisted
+  testing adds a validation layer" (Testing + AI, grounded in
+  `First_Post.png`'s anecdote), owner approved, researcher sourced
+  (2 claims, both ≤6 months old per the new recency rule), editor drafted
+  both formats, critic sent it back once (missing citation link) then
+  approved, owner approved text, designer generated the image (after
+  working through 3 broken providers — OmniRoute, direct Gemini — before
+  landing on OpenRouter + a 6-model benchmark, winner picked and used),
+  owner approved the image, publisher committed + deployed the blog, owner
+  gave a final separate go-ahead and the post went live on LinkedIn
+  (`urn:li:share:7505262619566718977`).
+- Verified: sourcing/citation rules (AGENTS.md §6) including the recency
+  rule, dual-format output + CTA lines + hashtags (AGENTS.md §3), Critic
+  caught a real issue, all four gates (topic/draft/image/LinkedIn) stopped
+  correctly.
+- Process fixes discovered and written back during the run: AI-source
+  recency rule, LinkedIn-hashtags rule, Designer's one-candidate-per-round
+  + no-trademark prompt rule, OpenRouter model-verification gotcha
+  (`/models` catalog unreliable — verify via the dedicated Image API
+  directly), blog images needing a body embed with `relative_url` (front
+  matter `image:` alone doesn't render, and a bare path 404s under this
+  site's baseurl), topic model changed from 4 single-topics
+  (Quality/Development/Testing/AI) to 4 multi-topics
+  (Development/Testing/AI/Processes), site-wide category nav + filtered
+  home page added.
+- Also satisfies M6 (first real deploy + first real LinkedIn post both
+  happened during this run) — M6 folded in below, not a separate pass.
+- Status: complete. See [M5 — Pilot entry.md](M5%20—%20Pilot%20entry.md).
 
-## M6 — Publish verification
-- First real merge → confirm GitHub Actions deploy works.
-- First real LinkedIn post via API → confirm auth + posting works end-to-end.
+## M6 — Publish verification (done, 2026-09-14, via M5)
+- First real merge → GitHub Actions deploy confirmed working (multiple
+  successful runs during M5).
+- First real LinkedIn post via API → confirmed working end-to-end
+  (`urn:li:share:7505262619566718977`), including the full OAuth setup
+  (LinkedIn Developer app, Share on LinkedIn + Sign In with OpenID Connect
+  products, `LINKEDIN_ACCESS_TOKEN` + `LINKEDIN_MEMBER_URN` in `.env`).
 
 ## M7 — Steady state
 - Recurring ad hoc use: owner runs the entry prompt per topic/batch.
