@@ -41,6 +41,10 @@ block start (all three show "None outstanding" as of 2026-09-14).
 - Run one entry through the full flow manually, owner in the loop at every gate.
 - Verify: sourcing/citation rules (AGENTS.md §6), dual-format output + CTA lines
   (AGENTS.md §3), Critic catches scope-drift/fabrication.
+- Decided (owner, 2026-09-14): this pilot's topic/content is `First_Post.png`
+  (owner's existing screenshot, root of repo, untracked/not yet committed) —
+  first entry of an ongoing series. Topic still needs owner agreement per
+  AGENTS.md §2/§4 before drafting starts.
 
 ## M6 — Publish verification
 - First real merge → confirm GitHub Actions deploy works.
