@@ -2,7 +2,7 @@
 layout: post
 title: "AI-Assisted Testing Adds a Validation Layer, It Doesn't Remove One"
 date: 2026-09-14
-topic: testing
+topics: [testing, ai]
 related_posts: []
 image: /assets/images/entries/2026-09-14-ai-assisted-testing-validation-layer.jpg
 ---

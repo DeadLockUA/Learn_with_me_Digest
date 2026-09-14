@@ -12,16 +12,21 @@
 
 ## 1. Project overview
 
-Learn with me Digest is an AI-written digest of short entries on **Quality,
-Development, Testing, and AI**, directed by the repo owner. Every entry has
-exactly one topic, is published in two formats (§3), and is drafted by an AI
-assistant, then reviewed by the owner before it's considered final.
+Learn with me Digest is an AI-written digest of short entries on
+**Development, Testing, AI, and Processes**, directed by the repo owner.
+Every entry carries one or more of these topics, is published in two
+formats (§3), and is drafted by an AI assistant, then reviewed by the
+owner before it's considered final.
 
 ## 2. Scope
 
-- Four recurring topics only: Quality, Development, Testing, AI.
-- An entry stays focused on one topic — don't blend unrelated subjects into a
-  single entry.
+- Four recurring topics only: Development, Testing, AI, Processes (owner,
+  2026-09-14 — Processes replaces the earlier Quality topic).
+- An entry can carry more than one topic when it genuinely spans them (e.g.
+  a Testing entry that also touches AI) — decided owner, 2026-09-14. Don't
+  tag a topic onto an entry it doesn't substantively address just for
+  visibility; multi-topic is for entries that actually span the topics, not
+  a way to cross-post.
 - Topics aren't picked in isolation — each one should connect to other
   entries (follow-up, contrast, deeper dive). When a topic is agreed, sketch
   how it could branch into further entries, not just the one at hand.
@@ -76,9 +81,10 @@ Rules:
   sources no older than 3 months, never older than 6. This applies to any
   claim/finding *about AI* (models, tooling, AI-driven results/benchmarks),
   regardless of which of the four recurring topics the entry itself is
-  filed under — an AI-adjacent citation inside a Testing/Quality/Development
-  entry is still held to this bar. If nothing citable exists within 6
-  months, say so explicitly rather than reaching for an older source.
+  filed under — an AI-adjacent citation inside a Testing/Processes/
+  Development entry is still held to this bar. If nothing citable exists
+  within 6 months, say so explicitly rather than reaching for an older
+  source.
 
 ## 7. Open topics gate
 
@@ -96,8 +102,10 @@ Decided (owner, 2026-09-14): flat files, shared naming per entry
 `YYYY-MM-DD-topic-slug`, no per-entry folder.
 
 - Blog (long form) — `_posts/YYYY-MM-DD-topic-slug.md`, standard Jekyll post.
-  Metadata (`topic`, `related_posts` for continuity per §2) lives in its YAML
-  front matter — the single source of truth for entry metadata.
+  Metadata lives in its YAML front matter — the single source of truth for
+  entry metadata: `topics` (array, one or more of `development`/`testing`/
+  `ai`/`processes`, lowercase — owner, 2026-09-14, replaces the old
+  singular `topic` field) and `related_posts` for continuity per §2.
 - LinkedIn (short form) — `entries/linkedin/YYYY-MM-DD-topic-slug.md`, plain
   file, not built by Jekyll.
 - Image — `assets/images/entries/YYYY-MM-DD-topic-slug.<ext>`.

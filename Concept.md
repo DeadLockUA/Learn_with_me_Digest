@@ -17,8 +17,8 @@ A candidate end-to-end flow for one digest entry:
 3. **Draft** — an agent writes both formats (blog + LinkedIn, AGENTS.md §3)
    against the style guide in AGENTS.md §5.
 4. **Self-check** — Critic agent verifies claims are sourced, the entry
-   stays on one topic, and no fabricated facts/citations slipped in
-   (AGENTS.md §6).
+   doesn't drift beyond its declared topics (AGENTS.md §2), and no
+   fabricated facts/citations slipped in (AGENTS.md §6).
 5. **Owner review** — human review/edit before either format is treated as
    final (AGENTS.md §4 step 5).
 6. **Publish** — merge to the main branch; GitHub Actions deploys the Jekyll

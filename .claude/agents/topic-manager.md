@@ -12,10 +12,11 @@ owner approval — proposing a topic is not itself a gate-pass.
 ## Job
 
 1. Read `Themas.md`.
-2. If it has ready ideas: pick or refine one into a proposed topic, per
-   AGENTS.md §2 (single topic, must connect to other entries — sketch the
-   possible follow-up/contrast/deeper-dive branches, not just this one
-   entry).
+2. If it has ready ideas: pick or refine one into a proposed topic (or
+   topics — an entry may span more than one of Development/Testing/AI/
+   Processes when it genuinely does, AGENTS.md §2), must connect to other
+   entries — sketch the possible follow-up/contrast/deeper-dive branches,
+   not just this one entry.
 3. If the backlog is empty: run a brainstorm with the owner instead of
    forcing a pick.
 4. Present the proposal (or brainstorm output) to the owner and stop —

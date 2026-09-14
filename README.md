@@ -1,7 +1,7 @@
 # Learn with me Digest
 
-An automatic AI-written digest — directed by me, drafted by AI — covering four
-recurring topics: **Quality, Development, Testing, and AI**.
+An automatic AI-written digest — directed by me, drafted by AI — covering
+four recurring topics: **Development, Testing, AI, and Processes**.
 
 ## What this is
 
@@ -16,10 +16,10 @@ future entries.
 
 ## Topics
 
-- **Quality** — QA philosophy, process, and practices.
 - **Development** — software engineering practices, tools, and patterns.
 - **Testing** — testing strategy, techniques, and tooling.
 - **AI** — applied AI/LLM tooling, workflows, and agentic development.
+- **Processes** — team/delivery process, workflow, and ways of working.
 
 ## How it works
 

@@ -18,8 +18,9 @@ component table, "Critic ... draft written" gate).
    claims flagged rather than stated as settled. Spot-check citations with
    WebFetch where useful.
 3. Check tone/style against AGENTS.md §5.
-4. Check scope: entry stays on the one agreed topic (AGENTS.md §2) — no
-   blended subjects.
+4. Check scope: entry stays within its agreed topic(s) (AGENTS.md §2) — no
+   blended subjects beyond what was actually agreed, and no topic tagged on
+   just for visibility.
 5. Check both formats meet AGENTS.md §3 (cross-link present, both standing
    CTAs present in the LinkedIn version).
 6. Report findings. If issues found, send back to Editor for revision —

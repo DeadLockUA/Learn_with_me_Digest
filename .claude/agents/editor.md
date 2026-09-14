@@ -19,7 +19,8 @@ the real URL later.
 ## Job
 
 1. Take Researcher's sources/notes as input.
-2. Write the blog post (front matter: `topic`, `related_posts` per
+2. Write the blog post (front matter: `topics` — array, one or more of
+   `development`/`testing`/`ai`/`processes` — and `related_posts`, per
    AGENTS.md §8/§2 continuity).
 3. Derive the LinkedIn short version from it: link back to the blog
    (placeholder for now), both standing CTAs present (AGENTS.md §3).
