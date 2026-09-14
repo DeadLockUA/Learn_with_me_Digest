@@ -65,5 +65,5 @@ layer you haven't measured yet — and budget for someone to own the triage.
   discovering it mid-rollout like I did.
 - **AI:** the triage bottleneck — who or what handles the flood of alerts, flaky results, and
   duplicate scenarios once coverage goes up.
-- **Quality:** who owns the call on what to trust, when the thing checking the work also needs
+- **Processes:** who owns the call on what to trust, when the thing checking the work also needs
   checking.

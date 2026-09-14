@@ -24,7 +24,7 @@ Full write-up and sources: https://deadlockua.github.io/Learn_with_me_Digest/202
 Where this could go next:
 - Testing: scoping the "validate the AI's verdict" layer up front.
 - AI: who/what handles the triage bottleneck as coverage grows.
-- Quality: who owns the call on what to trust.
+- Processes: who owns the call on what to trust.
 
 **Comment which of these (or another angle) you want covered next.**
 
