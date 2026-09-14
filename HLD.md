@@ -124,6 +124,12 @@ sequenceDiagram
 - Research sourcing: open web search, no fixed allowlist.
 - Repo stores both formats as separate files per entry (no generate-at-
   publish step).
+- Hosting mode (decided 2026-09-14): GitHub Pages **project site**
+  (`deadlockua.github.io/Learn_with_me_Digest`), no custom domain yet. Owner
+  intends to migrate to a custom domain later — scaffold should avoid
+  hard-coding the project-site path so that migration only needs adding a
+  `CNAME` file + DNS records, not editing content/links.
+- Theme (decided 2026-09-14): `minima` (stock GitHub Pages-supported theme).
 
 ## Remaining build tasks (decided, not blocking on further owner input)
 

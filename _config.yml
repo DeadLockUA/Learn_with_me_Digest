@@ -1,0 +1,23 @@
+title: Learn with me Digest
+description: >-
+  Short entries on Quality, Development, Testing, and AI.
+baseurl: "/Learn_with_me_Digest" # project-site subpath; set to "" when migrating to a custom domain
+url: "https://deadlockua.github.io"
+
+theme: minima
+
+# entries/ and assets/images/entries/ hold LinkedIn short-form text and
+# per-entry images — not Jekyll content, keep them out of the build.
+exclude:
+  - entries
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - AGENTS.md
+  - BEHAVIOUR.md
+  - CLAUDE.md
+  - Concept.md
+  - Customer_requirements.md
+  - HLD.md
+  - Themas.md
+  - plans
