@@ -22,7 +22,7 @@ My working pattern, opinion not standard: spike first, PERT from the spike with 
 
 The honest gap: no controlled measurement of AI-verdict-triage overhead exists in the last six months. The nearest peer-reviewed data, Alaswad et al. in Discover Computing, July 2026, N=22, finds human validation is the primary driver of effort in LLM-assisted work. DORA's "verification tax" and its 15% figure are reported via secondary write-ups, not verified against the gated primary report, and the 15% is a calculator default, not a measurement either way. Vendor telemetry from Faros and LinearB shows review load up sharply, but it's correlational and about code review, not test triage.
 
-Full breakdown with the estimate-line template and all sources on the blog: [BLOG_URL_PLACEHOLDER]
+Full breakdown with the estimate-line template and all sources on the blog: https://yevhenprodan.com/2026/09/09/estimating-the-triage-line.html
 
 Always happy to answer questions within my knowledge - ask away in the comments.
 And if there's a specific topic you want covered, comment and we'll dig into it next time.
