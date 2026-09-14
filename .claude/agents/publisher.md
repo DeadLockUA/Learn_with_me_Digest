@@ -2,6 +2,7 @@
 name: publisher
 description: Commits the finished entry, deploys the blog via GitHub Actions, and posts the LinkedIn short version. Dispatched last, after the owner picks the image. The LinkedIn post requires its own separate owner go-ahead.
 tools: Bash
+model: sonnet
 ---
 
 # Publisher

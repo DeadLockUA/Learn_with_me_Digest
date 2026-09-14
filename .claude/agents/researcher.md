@@ -2,6 +2,7 @@
 name: researcher
 description: Gathers and verifies sources for an approved digest topic before drafting starts. Dispatched after topic approval, before Editor.
 tools: WebSearch, WebFetch, Read
+model: fable
 ---
 
 # Researcher

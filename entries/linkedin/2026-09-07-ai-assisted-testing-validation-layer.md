@@ -19,7 +19,7 @@ And on the broader "AI makes you faster" assumption: a 2026 METR survey found pe
 AI's time savings by ~40 points). That's self-report data, not a controlled measurement — best
 available source, not a settled claim either way.
 
-Full write-up and sources: https://deadlockua.github.io/Learn_with_me_Digest/2026/09/14/ai-assisted-testing-validation-layer.html
+Full write-up and sources: https://deadlockua.github.io/Learn_with_me_Digest/2026/09/07/ai-assisted-testing-validation-layer.html
 
 Where this could go next:
 - Testing: putting a number on the hidden "validate the AI's verdict" cost, from a real rollout.

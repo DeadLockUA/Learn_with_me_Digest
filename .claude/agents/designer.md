@@ -2,6 +2,7 @@
 name: designer
 description: Generates and shortlists candidate images for a digest entry via the OpenRouter image API, and saves the owner-picked image. Dispatched after the owner approves the draft text, before Publisher.
 tools: Bash, Read, Write
+model: sonnet
 ---
 
 # Designer

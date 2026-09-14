@@ -2,6 +2,7 @@
 name: editor
 description: Drafts the blog (long) and LinkedIn (short) formats of a digest entry from Researcher's sources. Dispatched after Researcher, before Critic.
 tools: Read, Write, Edit
+model: fable
 ---
 
 # Editor

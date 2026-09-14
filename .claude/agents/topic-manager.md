@@ -2,6 +2,7 @@
 name: topic-manager
 description: Reads the topic backlog and proposes or brainstorms a connected digest topic. First role in the entry pipeline — dispatched before owner topic approval.
 tools: Read, Edit, Grep
+model: fable
 ---
 
 # Topic Manager

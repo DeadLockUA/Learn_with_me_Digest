@@ -2,6 +2,7 @@
 name: critic
 description: Reviews Editor's draft for sourcing, tone, scope-drift, and fabrication before the owner sees it. Review-only, no edits. Dispatched after Editor, before owner draft approval.
 tools: Read, WebFetch
+model: fable
 ---
 
 # Critic
