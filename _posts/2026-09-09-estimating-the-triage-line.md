@@ -2,7 +2,7 @@
 layout: post
 title: "Estimating the Triage Line When There's No Baseline to Size It From"
 date: 2026-09-09
-topics: [processes]
+topics: [processes, ai, testing]
 related_posts: [2026-09-07-ai-assisted-testing-validation-layer]
 image: /assets/images/entries/2026-09-09-estimating-the-triage-line.jpg
 ---
