@@ -1,8 +1,8 @@
 title: Learn with me Digest
 description: >-
   Short entries on Development, Testing, AI, and Processes.
-baseurl: "/Learn_with_me_Digest" # project-site subpath; set to "" when migrating to a custom domain
-url: "https://deadlockua.github.io"
+baseurl: "" # custom domain root
+url: "https://yevhenprodan.com"
 
 theme: minima
 
