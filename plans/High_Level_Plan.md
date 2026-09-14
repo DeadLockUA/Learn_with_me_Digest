@@ -62,8 +62,8 @@ block start (all three show "None outstanding" as of 2026-09-14).
   working through 3 broken providers — OmniRoute, direct Gemini — before
   landing on OpenRouter + a 6-model benchmark, winner picked and used),
   owner approved the image, publisher committed + deployed the blog, owner
-  gave a final separate go-ahead and the post went live on LinkedIn.
-  Final, correct post: `urn:li:share:7505266617694609408`.
+  gave a final separate go-ahead and the post went live on LinkedIn — see
+  the LinkedIn status note below, this did not end up staying live.
 - Verified: sourcing/citation rules (AGENTS.md §6) including the recency
   rule, dual-format output + CTA lines + hashtags (AGENTS.md §3), Critic
   caught a real issue, all four gates (topic/draft/image/LinkedIn) stopped
@@ -87,18 +87,34 @@ block start (all three show "None outstanding" as of 2026-09-14).
   reserved character (a literal `(`) stopped the parser with no error
   (still `201 Created`). Both fixed in `publisher.md` (image-upload flow
   documented; reserved-char escaping required before every post).
+- **LinkedIn status as of 2026-09-14: NOT live.** After fixing both bugs,
+  the corrected post (`urn:li:share:7505266617694609408`) was confirmed
+  live once by the owner, then found gone shortly after (owner reported
+  "post not found" in the LinkedIn UI). A same-content repost attempt got
+  `422 DUPLICATE_POST` from LinkedIn, referencing yet another URN
+  (`urn:li:share:7505268455793717248`) that is *also* not visible in the
+  UI — LinkedIn's duplicate-content detection is keying off a hash of the
+  deleted content and blocking re-posts, independent of the post's own
+  visibility. Likely cause: three create + two delete calls within ~15
+  minutes read as automated/spammy to LinkedIn's abuse detection. Owner
+  said **stop** — no further repost attempts. Blog post itself is
+  unaffected and still live; only the LinkedIn side needs revisiting, not
+  before the dedup/abuse-detection window has clearly passed (hours, not
+  minutes) and preferably with a real (not cosmetic) reason if the text
+  changes at all — don't tweak wording just to dodge the duplicate check.
 - Also satisfies M6 (first real deploy + first real LinkedIn post both
   happened during this run) — M6 folded in below, not a separate pass.
 - Status: complete. See [M5 — Pilot entry.md](M5%20—%20Pilot%20entry.md).
 
-## M6 — Publish verification (done, 2026-09-14, via M5)
+## M6 — Publish verification (blog done; LinkedIn partial, 2026-09-14)
 - First real merge → GitHub Actions deploy confirmed working (multiple
-  successful runs during M5).
-- First real LinkedIn post via API → confirmed working end-to-end (final
-  post `urn:li:share:7505266617694609408`, after fixing two bugs found
-  post-publish — see M5), including the full OAuth setup (LinkedIn
-  Developer app, Share on LinkedIn + Sign In with OpenID Connect products,
-  `LINKEDIN_ACCESS_TOKEN` + `LINKEDIN_MEMBER_URN` in `.env`).
+  successful runs during M5). Fully done.
+- First real LinkedIn post via API → auth + posting mechanics confirmed
+  working (OAuth setup complete, `LINKEDIN_ACCESS_TOKEN` +
+  `LINKEDIN_MEMBER_URN` in `.env`, text + image posted successfully via the
+  API), but the post itself is **not currently live** — see M5's LinkedIn
+  status note. Auth/mechanics verification: done. A post that actually
+  stays up: not yet confirmed.
 
 ## M7 — Steady state (entered, 2026-09-14)
 - M0–M6 all complete; the pipeline is now the tool for ongoing use. This
