@@ -45,6 +45,9 @@ Rules:
   and to request topics (e.g. "if there's a specific topic you want covered,
   comment and we'll dig into it next time"). Exact wording can vary per post;
   both must be present.
+- The LinkedIn version includes hashtags to help reach (owner, 2026-09-14).
+  Tags are picked per entry — specific and on-topic (recurring topic +
+  entry angle), not a copy-pasted boilerplate set reused across posts.
 
 ## 4. Content workflow
 
@@ -69,6 +72,13 @@ Rules:
 - Never fabricate statistics, quotes, or citations.
 - Distinguish fact from opinion explicitly when it isn't obvious from context.
 - If a claim can't be verified, say so rather than presenting it as settled.
+- Recency (owner, 2026-09-14): fast-moving topics age out quickly — prefer
+  sources no older than 3 months, never older than 6. This applies to any
+  claim/finding *about AI* (models, tooling, AI-driven results/benchmarks),
+  regardless of which of the four recurring topics the entry itself is
+  filed under — an AI-adjacent citation inside a Testing/Quality/Development
+  entry is still held to this bar. If nothing citable exists within 6
+  months, say so explicitly rather than reaching for an older source.
 
 ## 7. Open topics gate
 

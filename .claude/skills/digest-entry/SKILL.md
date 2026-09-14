@@ -35,13 +35,13 @@ do not reorder them.
    images are generated"). If the owner requests edits, re-dispatch editor
    (then critic) and return to this gate — do not proceed on a partial or
    implied approval.
-7. **designer** — generates candidate images via OmniRoute, presents
-   candidates + a recommendation.
-8. **GATE — Image approval.** Present the candidates and recommendation to
-   the owner. Stop and wait. Do not dispatch publisher's commit/deploy
-   steps until the owner picks an image (Customer_requirements.md, Images
-   row: "Owner picks final image before saving/publishing"). If the owner
-   rejects all candidates, re-dispatch designer for new ones and return to
+7. **designer** — generates ONE candidate image via the OpenRouter API
+   (fixed prompt template, see designer.md), presents it to the owner.
+8. **GATE — Image approval.** Present the candidate to the owner. Stop and
+   wait. Do not dispatch publisher's commit/deploy steps until the owner
+   approves the image (Customer_requirements.md, Images row: "Owner picks
+   final image before saving/publishing"). If the owner rejects it,
+   re-dispatch designer for ONE new candidate (not a batch) and return to
    this gate.
 9. **publisher — repo/deploy steps only** — commits the entry (blog +
    LinkedIn file + image) and triggers the Jekyll deploy. Publisher must
@@ -68,7 +68,8 @@ do not reorder them.
 - If repo state shows a partially-completed entry (e.g. a draft exists but
   isn't yet critic-checked), resume from the appropriate step instead of
   restarting from topic-manager.
-- Credentials: designer needs `OMNIROUTE_API_KEY`, publisher needs
+- Credentials: designer needs `OPENROUTER_API_KEY` +
+  `OPENROUTER_IMAGE_MODEL`, publisher needs
   `LINKEDIN_ACCESS_TOKEN`, both from the local `.env` (M3). If either
   subagent reports the credential missing, relay that to the owner as a
   blocker rather than retrying or skipping the step silently.

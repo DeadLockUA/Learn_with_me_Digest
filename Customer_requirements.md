@@ -61,7 +61,10 @@ for that).
 
 ## Decided
 
-- Image generation: OmniRoute API, key in a local gitignored `.env`.
+- Image generation: OpenRouter API, key (`OPENROUTER_API_KEY`) and pinned
+  model (`OPENROUTER_IMAGE_MODEL`) in a local gitignored `.env`. Changed
+  from OmniRoute, then a direct-Gemini attempt (decided 2026-09-14) — see
+  HLD.md "Data stores / external systems".
 - LinkedIn posting: LinkedIn API, automated.
 - Blog publish: Jekyll site, via a GitHub Actions workflow on merge to main.
 - Pipeline built as split agent roles (subagent types, dispatched in
@@ -75,7 +78,7 @@ for that).
   1. Create a LinkedIn Developer app (developer.linkedin.com).
   2. Request "Share on LinkedIn" product → `w_member_social` scope.
   3. Complete OAuth once, store the resulting access token in the local
-     `.env` alongside the OmniRoute key.
+     `.env` alongside the OpenRouter key.
 
 ## Decided (this pass)
 
@@ -91,6 +94,7 @@ None outstanding.
 ## Remaining build tasks (not open questions — no further owner decision needed)
 
 - Owner completes the LinkedIn app/OAuth steps above.
-- Owner obtains the OmniRoute API key.
+- Owner obtains the image-gen API key (done, 2026-09-14 — OpenRouter, see
+  .env).
 - GitHub Actions workflow file for Jekyll deploy: written, merged, first
   real deploy succeeded 2026-09-14 (M3, done).

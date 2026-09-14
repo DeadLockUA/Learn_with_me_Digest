@@ -28,7 +28,7 @@ flowchart TD
 
     Themas[(Themas.md backlog)]
     Repo[(Git repo\nentries folder, Jekyll source)]
-    ImgAPI[[OmniRoute image API]]
+    ImgAPI[[OpenRouter image API]]
     Pages[[GitHub Pages - Jekyll,\nvia GitHub Actions]]
     LinkedIn[[LinkedIn API]]
     DotEnv[(local .env)]
@@ -76,7 +76,7 @@ sequenceDiagram
     C->>Owner: checked draft
     Owner->>E: approve text (or send back to Editor)
     E->>D: approved text
-    D->>D: generate + evaluate images (OmniRoute)
+    D->>D: generate + evaluate images (OpenRouter)
     D->>Owner: candidates + recommendation
     Owner->>D: pick image
     D->>P: text + image, approved
@@ -94,7 +94,7 @@ sequenceDiagram
 | Researcher | Gathers/verifies sources for the approved topic | topic approved |
 | Editor | Drafts blog (long) + LinkedIn (short) per AGENTS.md §3/§5 | none, runs after research |
 | Critic | Checks sourcing/tone/scope-drift before owner sees it | draft written |
-| Designer | Generates & shortlists images via OmniRoute, gives a recommendation | text approved |
+| Designer | Generates & shortlists images via OpenRouter, gives a recommendation | text approved |
 | Publisher | Commits entry to repo, deploys blog via Actions, posts to LinkedIn | image approved |
 
 ## Data stores / external systems
@@ -102,20 +102,30 @@ sequenceDiagram
 - `Themas.md` — raw topic backlog (read/write by Topic Manager).
 - Repo entries folder — canonical source of truth for every published entry
   (both formats + chosen image), Jekyll source. Layout: AGENTS.md §8.
-- Image-gen API — **OmniRoute**, key stored in a local gitignored `.env`.
+- Image-gen API — **OpenRouter** (`OPENROUTER_API_KEY`), model pinned via
+  `OPENROUTER_IMAGE_MODEL` in `.env` (currently `openai/gpt-image-2.5-sunburst`).
+  Went through two prior attempts during the M5 pilot before landing here
+  (decided 2026-09-14): OmniRoute broker (all three of its own proxied
+  models failed — OpenRouter account limit, broken Gemini route,
+  unsupported Codex-routed model), then direct Gemini API (key
+  authenticated but the project had zero image-gen quota). Owner switched
+  to calling OpenRouter directly with a specific model instead.
 - GitHub Pages — Jekyll blog, deployed via a **GitHub Actions** workflow
   triggered on merge to main.
 - LinkedIn — posting target for the short-form version, via the
   **LinkedIn API** (automated, direct — no MCP). Requires a LinkedIn
   Developer app with `w_member_social` scope; OAuth token stored in the
-  local `.env` alongside the OmniRoute key.
+  local `.env` alongside the OpenRouter key.
 
 ## Decided
 
 - Multi-agent split, orchestrated as subagent types dispatched in sequence
   from one driving session (Topic Manager / Researcher / Critic / Editor /
   Designer / Publisher) — not a `Workflow`-tool pipeline.
-- Designer uses the OmniRoute image API, key in local `.env`.
+- Designer uses the OpenRouter image API, key (`OPENROUTER_API_KEY`) and
+  pinned model (`OPENROUTER_IMAGE_MODEL`) in local `.env` (changed from
+  OmniRoute, then a direct-Gemini attempt, decided 2026-09-14 — see
+  "Data stores / external systems" above).
 - Site generator: Jekyll.
 - Critic pass added before the draft reaches the owner.
 - Publisher posts to LinkedIn via the LinkedIn API (direct, no MCP).
