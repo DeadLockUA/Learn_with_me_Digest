@@ -62,8 +62,8 @@ block start (all three show "None outstanding" as of 2026-09-14).
   working through 3 broken providers — OmniRoute, direct Gemini — before
   landing on OpenRouter + a 6-model benchmark, winner picked and used),
   owner approved the image, publisher committed + deployed the blog, owner
-  gave a final separate go-ahead and the post went live on LinkedIn
-  (`urn:li:share:7505262619566718977`).
+  gave a final separate go-ahead and the post went live on LinkedIn.
+  Final, correct post: `urn:li:share:7505266617694609408`.
 - Verified: sourcing/citation rules (AGENTS.md §6) including the recency
   rule, dual-format output + CTA lines + hashtags (AGENTS.md §3), Critic
   caught a real issue, all four gates (topic/draft/image/LinkedIn) stopped
@@ -78,6 +78,15 @@ block start (all three show "None outstanding" as of 2026-09-14).
   (Quality/Development/Testing/AI) to 4 multi-topics
   (Development/Testing/AI/Processes), site-wide category nav + filtered
   home page added.
+- Two bugs found *after* the first post went live, each required a delete
+  + repost: (1) `urn:li:share:7505262619566718977` posted without the
+  entry's image — Publisher hadn't implemented image attachment yet;
+  (2) `urn:li:share:7505265167035805698` posted with the image but the
+  text silently truncated mid-sentence — LinkedIn's `commentary` field is
+  parsed as "little" text format, not raw plain text, and an unescaped
+  reserved character (a literal `(`) stopped the parser with no error
+  (still `201 Created`). Both fixed in `publisher.md` (image-upload flow
+  documented; reserved-char escaping required before every post).
 - Also satisfies M6 (first real deploy + first real LinkedIn post both
   happened during this run) — M6 folded in below, not a separate pass.
 - Status: complete. See [M5 — Pilot entry.md](M5%20—%20Pilot%20entry.md).
@@ -85,15 +94,25 @@ block start (all three show "None outstanding" as of 2026-09-14).
 ## M6 — Publish verification (done, 2026-09-14, via M5)
 - First real merge → GitHub Actions deploy confirmed working (multiple
   successful runs during M5).
-- First real LinkedIn post via API → confirmed working end-to-end
-  (`urn:li:share:7505262619566718977`), including the full OAuth setup
-  (LinkedIn Developer app, Share on LinkedIn + Sign In with OpenID Connect
-  products, `LINKEDIN_ACCESS_TOKEN` + `LINKEDIN_MEMBER_URN` in `.env`).
+- First real LinkedIn post via API → confirmed working end-to-end (final
+  post `urn:li:share:7505266617694609408`, after fixing two bugs found
+  post-publish — see M5), including the full OAuth setup (LinkedIn
+  Developer app, Share on LinkedIn + Sign In with OpenID Connect products,
+  `LINKEDIN_ACCESS_TOKEN` + `LINKEDIN_MEMBER_URN` in `.env`).
 
-## M7 — Steady state
-- Recurring ad hoc use: owner runs the entry prompt per topic/batch.
-- Topic continuity tracked (open item in Concept.md: durable follow-up list vs.
-  owner memory — revisit if it becomes a problem).
+## M7 — Steady state (entered, 2026-09-14)
+- M0–M6 all complete; the pipeline is now the tool for ongoing use. This
+  milestone has no further build deliverable — it's the operating mode
+  going forward, not a one-time task to close out.
+- Recurring ad hoc use: owner runs `/digest-entry` (or the equivalent
+  prompt) per topic/batch.
+- Topic continuity tracked (open item in Concept.md: durable follow-up list
+  vs. owner memory — revisit if it becomes a problem).
+- Known rough edges to watch for on future entries (all fixed in the agent
+  definitions, but worth remembering): image-gen model availability drifts
+  on OpenRouter (verify via the dedicated Image API, not the general
+  catalog), and LinkedIn's commentary field needs reserved-character
+  escaping (`.claude/agents/publisher.md` has the full list).
 
 ## Out of scope for this plan
 - Cadence automation (cron/Routine) — explicitly rejected, ad hoc only.
