@@ -14,8 +14,6 @@ Sizing with no history: 𝗿𝗲𝗳𝗲𝗿𝗲𝗻𝗰𝗲 𝗰𝗹𝗮𝘀�
 
 𝗠𝘆 𝘄𝗼𝗿𝗸𝗶𝗻𝗴 𝗽𝗮𝘁𝘁𝗲𝗿𝗻, opinion not standard: 𝘀𝗽𝗶𝗸𝗲 first, 𝗣𝗘𝗥𝗧 from the 𝘀𝗽𝗶𝗸𝗲 with pessimistic at 4x, Rule of Five as the re-estimate trigger, basis kept visible.
 
-𝗧𝗵𝗲 𝗵𝗼𝗻𝗲𝘀𝘁 𝗴𝗮𝗽: no controlled measurement of AI-verdict-triage overhead exists in the last six months. The nearest peer-reviewed data - Alaswad et al., Discover Computing, July 2026, N=22 - finds human validation is the primary effort driver in LLM-assisted work. DORA's "verification tax" figure is only reported second-hand and is a calculator default, not a measurement.
-
 • • • • • • • • • •
 👉 If you're interested in the topic, I recommend visiting my blog, where I cover it in much more depth: https://yevhenprodan.com/2026/09/09/estimating-the-triage-line.html
 • • • • • • • • • •
