@@ -70,7 +70,17 @@ Rules:
 - Distinguish fact from opinion explicitly when it isn't obvious from context.
 - If a claim can't be verified, say so rather than presenting it as settled.
 
-## 7. Repository structure
+## 7. Open topics gate
+
+- Open questions/dependencies tracked in [Concept.md](Concept.md),
+  [HLD.md](HLD.md), and [Customer_requirements.md](Customer_requirements.md)
+  must be resolved with the owner before implementation work starts.
+- "Resolved" means the owner made a decision and it's written back into the
+  relevant doc — not just discussed.
+- If new open questions surface mid-implementation, stop and get them
+  resolved before continuing.
+
+## 8. Repository structure
 
 No content structure is finalized yet — this section will be updated once the
 first entries define it. Until then, don't invent directory layouts
@@ -78,13 +88,13 @@ unprompted; raise structure proposals with the owner directly. (Content
 structure isn't tracked in [Concept.md](Concept.md) — that file covers the
 production pipeline: tools, agents, workflow.)
 
-## 8. Git workflow
+## 9. Git workflow
 
 - Work on a feature branch per entry or per batch of related entries.
 - Write clear, descriptive commit messages.
 - Changes are reviewed by the repo owner before merging.
 
-## 9. Prefix canary
+## 10. Prefix canary
 
 - After the [BEHAVIOUR.md](BEHAVIOUR.md) model-name prefix, append
   `Learn_with_me_Digest: `, e.g. `Sonnet 5 - Learn_with_me_Digest: `. This

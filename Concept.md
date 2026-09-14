@@ -16,12 +16,13 @@ A candidate end-to-end flow for one digest entry:
    (web search/fetch, or a specific source the owner points at).
 3. **Draft** — an agent writes both formats (blog + LinkedIn, AGENTS.md §3)
    against the style guide in AGENTS.md §5.
-4. **Self-check** — a pass that verifies claims are sourced, the entry stays
-   on one topic, and no fabricated facts/citations slipped in (AGENTS.md §6).
+4. **Self-check** — Critic agent verifies claims are sourced, the entry
+   stays on one topic, and no fabricated facts/citations slipped in
+   (AGENTS.md §6).
 5. **Owner review** — human review/edit before either format is treated as
    final (AGENTS.md §4 step 5).
-6. **Publish** — merge to the main branch (and, later, whatever rendering
-   target is chosen — see Open questions).
+6. **Publish** — merge to the main branch; GitHub Actions deploys the Jekyll
+   site, Blogger posts the short form to LinkedIn via its API.
 
 ## Publishing channels — implementation
 
@@ -43,32 +44,32 @@ thread), or does the owner just carry it between sessions for now?
 
 ## Agents & roles
 
-Draft roster (not yet built):
+**Decided:** split into roles, orchestrated as subagent types dispatched in
+sequence from one driving VS Code session (not a `Workflow`-tool pipeline,
+not a single agent doing everything).
+
+Roster:
 
 - **Editor** — writes and edits the entry (both formats). Output targets the
   public reader, not the owner — it is **not** bound by this repo's own
   house style (CLAUDE.md's terse/no-fluff output rules govern how an agent
   talks to the owner in-session, not the digest content itself).
 - **Researcher** — searches the web for sourcing material.
-- **Designer** — generates the graphical part of a post. Needs a GPT/OpenAI
-  API key wired in.
+- **Critic** — reviews the draft (sourcing, tone, scope-drift) before it
+  reaches the owner.
+- **Designer** — generates the graphical part of a post via the OmniRoute
+  image API. Key stored locally in a gitignored `.env`.
 - **Engineer** — works out a solution/technical answer from given inputs,
   when an entry needs one (e.g. a worked example, a fix, a technique).
-- **Blogger** — publishes the finished entry to the blog and to LinkedIn.
-
-Open: single sequential agent doing all of the above vs. split roles vs.
-adding a reviewer/critic pass before publish. Multi-agent orchestration
-(e.g. the `Workflow` tool) is only worth it once there's a real bottleneck a
-single sequential agent can't clear — not a default to reach for from day
-one.
+- **Blogger** — publishes the finished entry to the blog (Jekyll, deployed
+  via GitHub Actions on merge to main) and to LinkedIn (LinkedIn API,
+  automated).
 
 ## Trigger mechanism
 
-- A recurring **Routine** (Claude Code Remote `create_trigger`, cron-based)
-  that fires into a session with the next backlog item and starts the
-  pipeline.
-- Vs. purely owner-initiated: the owner starts a session and names the topic
-  each time. Lower setup cost, no cadence commitment.
+**Decided:** owner-initiated, ad hoc — the owner starts a session and runs
+the entry prompt each time (Customer_requirements.md). No recurring
+Routine/cron trigger.
 
 ## Tooling notes
 
@@ -77,15 +78,22 @@ one.
 - Drafting/editing happens as normal file edits in this repo (no special
   CMS).
 - Git: one branch per entry (or per batch), PR opened for owner review,
-  merged by the owner (AGENTS.md §8).
+  merged by the owner (AGENTS.md §9).
+
+## Decided (this pass)
+
+- Cadence: ad hoc — owner starts a session and kicks off an entry, no
+  cron/Routine trigger.
+- Research sourcing: open web search (`WebSearch`/`WebFetch`), no fixed
+  allowlist — cite per AGENTS.md §6.
+- LinkedIn API access: direct API, no MCP. Owner still needs to create the
+  Developer app, get `w_member_social` scope, and complete OAuth (see
+  Customer_requirements.md).
+
+Also decided: the repo holds both formats as separate files per entry
+(blog + LinkedIn), committed together by Editor — no generate-at-publish
+step.
 
 ## Open questions
 
-- Does this repo hold both formats (long + short), or just the long-form
-  source with the LinkedIn version generated at publish time?
-- Cadence: fixed schedule vs. ad hoc as topics come up?
-- Where does the self-check/review step actually live — same session as
-  drafting, a separate agent, or folded into owner review only?
-- Does research need a fixed source allowlist, or is open web search fine?
-- Designer/GPT key: stored how (env var, secrets manager), and scoped to
-  which agent only?
+None outstanding.
