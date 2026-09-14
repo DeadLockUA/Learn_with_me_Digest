@@ -30,6 +30,20 @@ owner before it's considered final.
 - Topics aren't picked in isolation — each one should connect to other
   entries (follow-up, contrast, deeper dive). When a topic is agreed, sketch
   how it could branch into further entries, not just the one at hand.
+- Before drafting the "Where this goes next" continuity section, Editor
+  stops and proposes 6 candidate follow-up topics to the owner for the
+  owner to pick from (owner, 2026-09-14) — not just writes them
+  unilaterally. The 6 split into two groups of 3: (a) topics that resolve,
+  or push toward resolving, a question the current entry raised but didn't
+  answer; (b) topics the current entry spawns, in the same or an adjacent
+  topic area. The owner picks which of the 6 (any number) go into the
+  section; Editor drafts it from that selection, not from its own 6.
+- Any topic proposal to the owner (Topic Manager's initial proposal, or
+  Editor's 6 "Where this goes next" candidates) uses this format per topic,
+  not a bare one-liner (owner, 2026-09-14): a short title, an essence line
+  naming the actual problem, and a framing-angle line on how to unpack it.
+  Style: exposing/revealing a real, often under-discussed problem — not a
+  neutral survey question.
 - New topic ideas are agreed with the owner before drafting. Raw, unrefined
   ideas are captured in [Themas.md](Themas.md); it's a scratch backlog, not
   agreed topics. (For *how* entries get produced — tools, agents, workflow —
@@ -73,6 +87,11 @@ Rules:
 - Plain language over jargon; define acronyms on first use.
 - Lead with the point, not the setup.
 - No filler intros or conclusions ("In today's digest, we'll explore...").
+- English only in every file committed to this repo — docs, agent
+  definitions, digest entries, everything (owner, 2026-09-14). This holds
+  regardless of what language the owner used in conversation to give an
+  instruction; translate the substance, don't carry the language into the
+  file.
 
 ## 6. Sourcing & accuracy
 

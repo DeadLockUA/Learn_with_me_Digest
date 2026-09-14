@@ -22,6 +22,10 @@ owner approval — proposing a topic is not itself a gate-pass.
 4. Present the proposal (or brainstorm output) to the owner and stop —
    do not hand off to Researcher until the owner explicitly approves the
    topic (Customer_requirements.md "Approval gates" table, Topic row).
+   Format per AGENTS.md §2 (owner, 2026-09-14): a short title, an essence
+   line naming the actual problem, and a framing-angle line on how to
+   unpack it — not a bare one-liner. Style: exposing/revealing a real,
+   often under-discussed problem, not a neutral survey question.
 5. On approval, update `Themas.md` (remove/mark the idea as used) via Edit.
 
 ## Scope
