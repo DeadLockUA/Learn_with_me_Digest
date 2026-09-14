@@ -77,10 +77,11 @@ overhead itself — that number doesn't exist yet, which is the point.
 
 ## Where this goes next
 
-- **Testing:** putting a number on the hidden "validate the AI's verdict" cost, from a real
-  rollout.
-- **AI:** isolating the test-writing AI from the implementation entirely — separate engineer,
-  separate AI instance, no access to the code — and whether that actually closes the blind-spot
-  gap.
-- **Processes:** once someone has to validate the AI's verdict, who should that be — the same
-  tester or a different person.
+- **Processes / estimation:** what "name the layer" looks like as an actual line item in the
+  estimate — and how you size a triage line when there's no baseline to size it from.
+- **Processes / ownership:** triage as a real role with decision authority, not a default
+  fallback to whoever notices the alert first — and what "handled" costs when nobody owns it.
+- **Testing / measurement:** a minimal 3-number triage log — time per batch, share that's
+  duplicates, share that's real signal — to build the reference point that's missing today.
+- **Testing / coverage:** duplicate AI-generated scenarios that inflate the coverage number
+  without adding any real safety net — and how to tell the two apart.

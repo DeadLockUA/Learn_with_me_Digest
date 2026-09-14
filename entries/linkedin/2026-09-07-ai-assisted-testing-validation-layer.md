@@ -22,10 +22,11 @@ available source, not a settled claim either way.
 Full write-up and sources: https://deadlockua.github.io/Learn_with_me_Digest/2026/09/07/ai-assisted-testing-validation-layer.html
 
 Where this could go next:
-- Testing: putting a number on the hidden "validate the AI's verdict" cost, from a real rollout.
-- AI: isolating the test-writing AI from the implementation entirely — does that close the
-  blind-spot gap?
-- Processes: who should validate the AI's verdict — same tester or a different person.
+- Processes: the triage line item that isn't in your estimate — how do you size it with no
+  baseline?
+- Processes: owning triage vs. having it "handled" — a real role, not whoever notices first.
+- Testing: a minimal 3-number triage log to build the missing reference point.
+- Testing: duplicate AI-generated tests — the coverage number that lies.
 
 Comment which of these (or another angle) you want covered next.
 
