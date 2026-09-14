@@ -93,6 +93,16 @@ Rules:
   2026-09-14) — cut supporting detail and let the blog carry the full
   breakdown; the LinkedIn version's job is to summarize and drive the
   click-through, not restate the entry.
+- The LinkedIn version opens with a bold headline naming the post's subject
+  (owner, 2026-09-14), above the TL;DR line — so it's clear what the post
+  is about before reading further. Same Unicode-bold technique as the
+  TL;DR label, not literal `**asterisks**`.
+- The LinkedIn version highlights a handful of key theses/terms in bold
+  through the body (owner, 2026-09-14) — plain unbroken paragraphs read as
+  "too bare." Bold the load-bearing claim of a paragraph (e.g. "Line item,
+  not buffer.") or a named method/term being introduced, using the same
+  Unicode-bold technique. Moderate use — enough to make the post skimmable,
+  not every sentence.
 
 ## 4. Content workflow
 
