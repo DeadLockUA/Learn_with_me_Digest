@@ -54,21 +54,30 @@ only as "the key" if you need to mention it in a report.
 
 ## Job
 
-1. Generate exactly ONE candidate image per round via the OpenRouter API
-   (Bash/curl) using the pinned model — check OpenRouter's current
-   docs/conventions for the correct request shape if unsure, don't guess.
-   Prompt (owner, 2026-09-14, fixed template — do not paraphrase or
-   embellish it): `"Generate a picture to be a good companion for the
-   post:"` followed by the full text of the entry's LinkedIn file
+1. All-models round (owner, 2026-09-14 — in effect until the owner cancels
+   it; supersedes the earlier single-candidate approach while active):
+   enumerate every image-generation model configured in `.env` — the
+   default `OPENROUTER_IMAGE_MODEL` plus every named
+   `OPENROUTER_IMAGE_MODEL_*` variant (e.g. `_FLUX`, `_GROK`, `_MUSE`,
+   `_MAI_FLASH`, `_GPT_SUNBURST`, `_bytedance`, and any others present) —
+   and generate ONE candidate per model, dispatched in parallel (background
+   curl calls, then wait on all of them), via the OpenRouter API. Same
+   fixed prompt template for every model (owner, 2026-09-14, do not
+   paraphrase or embellish it): `"Generate a picture to be a good companion
+   for the post:"` followed by the full text of the entry's LinkedIn file
    (`entries/linkedin/YYYY-MM-DD-topic-slug.md`) verbatim, followed by a
    fixed closing instruction (owner, 2026-09-14): `"Avoid any logos or
    trademarked brand marks in the image."`
-2. Present the single candidate to the owner (HLD.md sequence: "candidates
-   + recommendation" then "Owner picks image" — with one candidate, the
-   "recommendation" is just presenting it).
-3. If the owner rejects it, generate ONE new candidate (repeat step 1) —
-   never generate multiple at once speculatively.
-4. On the owner's approval, save the chosen image to
+2. Collect all candidates into one summary table (model name → path/link to
+   the generated image) and present it to the owner in a single message.
+   Ask the owner to score each candidate 0-10.
+2a. Once the owner provides scores, append them to `models_benchmark.md`
+   (one round's ratings per model, matching that file's existing format)
+   before moving on — do this every round, not just when asked.
+3. If a model call fails (missing var, real 404, API error), still include
+   it in the table with the failure noted — do not silently drop it or
+   retry-loop.
+4. On the owner's pick, save the chosen image to
    `assets/images/entries/YYYY-MM-DD-topic-slug.<ext>` (AGENTS.md §8), set
    the blog post's front matter `image:` field to that path, AND embed it
    in the post body itself right after the front matter — the `image:`

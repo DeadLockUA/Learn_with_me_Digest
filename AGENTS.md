@@ -78,6 +78,8 @@ Rules:
   LinkedIn's API doesn't render Markdown; `**bold**`, `_italic_`, `# headers`,
   etc. post as literal characters. No Markdown syntax anywhere in the
   LinkedIn file, including in list bullets/CTAs.
+- The LinkedIn version opens with a "TL;DR" line — a short summary of what
+  the post is about, before the rest of the text (owner, 2026-09-14).
 
 ## 4. Content workflow
 
@@ -139,6 +141,17 @@ Decided (owner, 2026-09-14): flat files, shared naming per entry
 - LinkedIn (short form) — `entries/linkedin/YYYY-MM-DD-topic-slug.md`, plain
   file, not built by Jekyll.
 - Image — `assets/images/entries/YYYY-MM-DD-topic-slug.<ext>`.
+- Image generation (owner, 2026-09-14 — in effect until the owner cancels
+  it; supersedes the earlier single-candidate rule while active): Designer
+  must call every image-generation model configured in `.env` (the default
+  `OPENROUTER_IMAGE_MODEL` plus every named `OPENROUTER_IMAGE_MODEL_*`
+  variant), dispatched in parallel, one candidate per model — not just the
+  pinned default. Collect the results into one summary table (model →
+  candidate image) and present it to the owner, who scores each candidate
+  0-10. Owner picks the final image from that table. Once the owner
+  provides scores, append them to [models_benchmark.md](models_benchmark.md)
+  (one round's ratings per model, per that file's existing format) before
+  moving on — this is part of the same step, not a separate follow-up.
 
 ## 9. Git workflow
 

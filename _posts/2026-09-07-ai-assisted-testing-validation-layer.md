@@ -3,7 +3,7 @@ layout: post
 title: "AI-Assisted Testing Adds a Validation Layer, It Doesn't Remove One"
 date: 2026-09-07
 topics: [testing, ai]
-related_posts: []
+related_posts: [2026-09-09-estimating-the-triage-line]
 image: /assets/images/entries/2026-09-07-ai-assisted-testing-validation-layer.jpg
 ---
 
@@ -77,8 +77,9 @@ overhead itself — that number doesn't exist yet, which is the point.
 
 ## Where this goes next
 
-- **Processes / estimation:** what "name the layer" looks like as an actual line item in the
-  estimate — and how you size a triage line when there's no baseline to size it from.
+- **Processes / estimation — now covered:** what "name the layer" looks like as an actual line
+  item in the estimate, and how you size a triage line when there's no baseline to size it from —
+  see [Estimating the Triage Line When There's No Baseline to Size It From]({% post_url 2026-09-09-estimating-the-triage-line %}).
 - **Processes / ownership:** triage as a real role with decision authority, not a default
   fallback to whoever notices the alert first — and what "handled" costs when nobody owns it.
 - **Testing / measurement:** a minimal 3-number triage log — time per batch, share that's
