@@ -64,8 +64,6 @@ title: "News Around the World — YYYY-MM-DD"
 date: YYYY-MM-DD
 ---
 
-Short, thesis-style roundup of what today's sources ([resources.md](https://github.com/DeadLockUA/Learn_with_me_Digest/blob/main/resources.md)) published. No commentary — for analysis, see the regular digest entries.
-
 ## Testing
 
 - [Source Name](url) — one-line thesis of the item.
