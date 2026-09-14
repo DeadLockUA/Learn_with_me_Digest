@@ -22,9 +22,10 @@ available source, not a settled claim either way.
 Full write-up and sources: https://deadlockua.github.io/Learn_with_me_Digest/2026/09/14/ai-assisted-testing-validation-layer.html
 
 Where this could go next:
-- Testing: scoping the "validate the AI's verdict" layer up front.
-- AI: who/what handles the triage bottleneck as coverage grows.
-- Processes: who owns the call on what to trust.
+- Testing: putting a number on the hidden "validate the AI's verdict" cost, from a real rollout.
+- AI: isolating the test-writing AI from the implementation entirely — does that close the
+  blind-spot gap?
+- Processes: who should validate the AI's verdict — same tester or a different person.
 
 Comment which of these (or another angle) you want covered next.
 

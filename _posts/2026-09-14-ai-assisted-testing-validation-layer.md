@@ -61,9 +61,10 @@ layer you haven't measured yet — and budget for someone to own the triage.
 
 ## Where this goes next
 
-- **Testing:** how to actually scope the "validate the AI's verdict" layer up front, instead of
-  discovering it mid-rollout like I did.
-- **AI:** the triage bottleneck — who or what handles the flood of alerts, flaky results, and
-  duplicate scenarios once coverage goes up.
-- **Processes:** who owns the call on what to trust, when the thing checking the work also needs
-  checking.
+- **Testing:** putting a number on the hidden "validate the AI's verdict" cost, from a real
+  rollout.
+- **AI:** isolating the test-writing AI from the implementation entirely — separate engineer,
+  separate AI instance, no access to the code — and whether that actually closes the blind-spot
+  gap.
+- **Processes:** once someone has to validate the AI's verdict, who should that be — the same
+  tester or a different person.
