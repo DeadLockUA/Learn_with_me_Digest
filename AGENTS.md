@@ -48,6 +48,13 @@ owner before it's considered final.
   ideas are captured in [Themas.md](Themas.md); it's a scratch backlog, not
   agreed topics. (For *how* entries get produced — tools, agents, workflow —
   see [Concept.md](Concept.md); it doesn't track topic ideas either.)
+- Explicit continuation posts (owner, 2026-09-14, blog only — not
+  LinkedIn): when the owner explicitly flags a new entry as a continuation
+  of a prior post, the new blog entry must open by naming that link (e.g.
+  "The last post raised the question of..."), and the prior post must be
+  edited to add a link forward to the new entry — so the connection is
+  two-way, not just the new post pointing back. Use `related_posts` (§8)
+  on both posts for this.
 
 ## 3. Publishing channels
 
