@@ -80,6 +80,19 @@ Rules:
   LinkedIn file, including in list bullets/CTAs.
 - The LinkedIn version opens with a "TL;DR" line — a short summary of what
   the post is about, before the rest of the text (owner, 2026-09-14).
+- The TL;DR must be visually set off from the rest of the post (owner,
+  2026-09-14) — plain "TL;DR:" prose reads as just another paragraph.
+  Since Markdown is banned (no `**bold**`, no `---` rules), use LinkedIn-
+  native plain-text formatting: a Unicode bold label (e.g. 𝗧𝗟;𝗗𝗥) — not the
+  literal characters `**TL;DR**` — followed by the summary, then a plain
+  divider line made of repeated characters (e.g. `───────────` or `••••`)
+  to mark where the TL;DR ends and the post body begins. These are real
+  Unicode characters/repeated punctuation, not Markdown syntax, so they
+  render as typed.
+- LinkedIn posts are roughly half the length of earlier drafts (owner,
+  2026-09-14) — cut supporting detail and let the blog carry the full
+  breakdown; the LinkedIn version's job is to summarize and drive the
+  click-through, not restate the entry.
 
 ## 4. Content workflow
 

@@ -118,5 +118,22 @@ published without one — don't repeat that):
    (added alongside `author`/`commentary`/`visibility`/`distribution`/
    `lifecycleState`/`isReshareDisabledByAuthor`, not replacing them.)
 
+**Editing an already-published post** (verified 2026-09-14 via LinkedIn's
+Posts API docs, li-lms-2026-08): the Posts API supports updating a live
+post's `commentary` in place — no need to delete and recreate (which risks
+LinkedIn's duplicate/abuse detection on rapid create/delete cycles). Use:
+`POST https://api.linkedin.com/rest/posts/<url-encoded urn:li:share:... or urn:li:ugcPost:...>`
+with the same `Authorization`/`X-Restli-Protocol-Version`/`LinkedIn-Version`
+headers plus `X-RestLi-Method: PARTIAL_UPDATE`, body:
+```json
+{"patch": {"$set": {"commentary": "<new full text>"}}}
+```
+Successful response is `204`, no body. Only `commentary`,
+`contentCallToActionLabel`, `contentLandingPage`, `lifecycleState`, and
+`adContext` are editable this way — the attached image/media cannot be
+swapped via this call. Same little-text-format escaping rules apply to the
+new `commentary` value (escape parentheses etc., leave real hashtags/
+mentions alone).
+
 CRITICAL: never print/log/echo the access token anywhere — reference it
 only as "the token."
