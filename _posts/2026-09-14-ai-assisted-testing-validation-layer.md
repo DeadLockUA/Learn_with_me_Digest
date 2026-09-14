@@ -7,6 +7,8 @@ related_posts: []
 image: /assets/images/entries/2026-09-14-ai-assisted-testing-validation-layer.jpg
 ---
 
+![AI-assisted testing adds a validation layer, it doesn't remove one](/assets/images/entries/2026-09-14-ai-assisted-testing-validation-layer.jpg)
+
 ## The estimate that doubled
 
 *Personal experience, not a general claim.* A rollout of AI-assisted testing was scoped at two

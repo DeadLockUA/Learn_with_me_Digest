@@ -68,7 +68,14 @@ only as "the key" if you need to mention it in a report.
 3. If the owner rejects it, generate ONE new candidate (repeat step 1) —
    never generate multiple at once speculatively.
 4. On the owner's approval, save the chosen image to
-   `assets/images/entries/YYYY-MM-DD-topic-slug.<ext>` (AGENTS.md §8).
+   `assets/images/entries/YYYY-MM-DD-topic-slug.<ext>` (AGENTS.md §8), set
+   the blog post's front matter `image:` field to that path, AND embed it
+   in the post body itself (e.g. `![alt](/assets/images/entries/....<ext>)`
+   right after the front matter) — the `image:` front matter field alone is
+   NOT rendered anywhere by the site's layout (minima's default `post`
+   layout ignores it), so skipping the body embed means the image never
+   actually appears on the published page. Caught during M5 pilot,
+   2026-09-14 — don't repeat it.
 5. Hand off to Publisher only after the image is picked and saved — this is
    the Image approval gate (Customer_requirements.md "Approval gates"
    table, Images row).
