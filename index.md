@@ -22,27 +22,36 @@ Browse by topic:
 <style>
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  margin: 2rem 0;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  margin: 1.5rem 0;
 }
 @media (max-width: 600px) {
-  .category-grid { grid-template-columns: 1fr; }
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
 }
 .category-button {
   display: block;
   text-align: center;
-  padding: 2.5rem 1rem;
-  font-size: 1.5rem;
+  padding: 0.75rem 0.5rem;
+  font-size: 1rem;
   font-weight: 600;
   border: 2px solid #2a7ae2;
-  border-radius: 8px;
+  border-radius: 6px;
   color: #2a7ae2;
   text-decoration: none;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 .category-button:hover {
   background-color: #2a7ae2;
+  color: #fff;
+}
+.category-button--news {
+  border-color: #e2622a;
+  color: #e2622a;
+  font-weight: 700;
+}
+.category-button--news:hover {
+  background-color: #e2622a;
   color: #fff;
 }
 </style>
@@ -52,4 +61,5 @@ Browse by topic:
   <a class="category-button" href="{{ '/testing/' | relative_url }}">Testing</a>
   <a class="category-button" href="{{ '/ai/' | relative_url }}">AI</a>
   <a class="category-button" href="{{ '/processes/' | relative_url }}">Processes</a>
+  <a class="category-button category-button--news" href="{{ '/news/' | relative_url }}">News Around the World</a>
 </div>
