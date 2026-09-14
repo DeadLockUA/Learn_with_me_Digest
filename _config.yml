@@ -1,6 +1,6 @@
 title: Learn with me Digest
 description: >-
-  Short entries on Quality, Development, Testing, and AI.
+  Short entries on Development, Testing, AI, and Processes.
 baseurl: "/Learn_with_me_Digest" # project-site subpath; set to "" when migrating to a custom domain
 url: "https://deadlockua.github.io"
 
@@ -27,3 +27,4 @@ exclude:
   - HLD.md
   - Themas.md
   - plans
+  - models_benchmark.md
