@@ -70,12 +70,19 @@ only as "the key" if you need to mention it in a report.
 4. On the owner's approval, save the chosen image to
    `assets/images/entries/YYYY-MM-DD-topic-slug.<ext>` (AGENTS.md §8), set
    the blog post's front matter `image:` field to that path, AND embed it
-   in the post body itself (e.g. `![alt](/assets/images/entries/....<ext>)`
-   right after the front matter) — the `image:` front matter field alone is
-   NOT rendered anywhere by the site's layout (minima's default `post`
-   layout ignores it), so skipping the body embed means the image never
-   actually appears on the published page. Caught during M5 pilot,
-   2026-09-14 — don't repeat it.
+   in the post body itself right after the front matter — the `image:`
+   front matter field alone is NOT rendered anywhere by the site's layout
+   (minima's default `post` layout ignores it), so skipping the body embed
+   means the image never actually appears on the published page. Caught
+   during M5 pilot, 2026-09-14 — don't repeat it.
+   Use the Liquid `relative_url` filter, NOT a bare absolute path — the
+   site's `baseurl` (`/Learn_with_me_Digest`, see `_config.yml`) means a
+   bare `/assets/...` path 404s (also caught during M5, after the first
+   "fix" still didn't actually load):
+   `![alt]({{ "/assets/images/entries/YYYY-MM-DD-topic-slug.<ext>" | relative_url }})`
+   After saving, verify the image actually loads on the deployed page
+   (check the real `<img src>` resolves, not just that the tag exists) —
+   don't report success from HTML text matching alone.
 5. Hand off to Publisher only after the image is picked and saved — this is
    the Image approval gate (Customer_requirements.md "Approval gates"
    table, Images row).

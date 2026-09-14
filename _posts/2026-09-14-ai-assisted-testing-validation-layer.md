@@ -7,7 +7,7 @@ related_posts: []
 image: /assets/images/entries/2026-09-14-ai-assisted-testing-validation-layer.jpg
 ---
 
-![AI-assisted testing adds a validation layer, it doesn't remove one](/assets/images/entries/2026-09-14-ai-assisted-testing-validation-layer.jpg)
+![AI-assisted testing adds a validation layer, it doesn't remove one]({{ "/assets/images/entries/2026-09-14-ai-assisted-testing-validation-layer.jpg" | relative_url }})
 
 ## The estimate that doubled
 
