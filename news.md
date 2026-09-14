@@ -5,7 +5,7 @@ permalink: /news/
 ---
 
 Daily, thesis-style roundup of what the sources in
-[resources.md]({{ '/resources/' | relative_url }}) published. One page per day, newest first.
+resources.md published. One page per day, newest first.
 
 {% assign days = site.news | sort: "date" | reverse %}
 {% if days.size > 0 %}
