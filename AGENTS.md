@@ -85,10 +85,12 @@ Rules:
   Since Markdown is banned (no `**bold**`, no `---` rules), use LinkedIn-
   native plain-text formatting: a Unicode bold label (e.g. 𝗧𝗟;𝗗𝗥) — not the
   literal characters `**TL;DR**` — followed by the summary, then a plain
-  divider line made of repeated characters (e.g. `───────────` or `••••`)
-  to mark where the TL;DR ends and the post body begins. These are real
-  Unicode characters/repeated punctuation, not Markdown syntax, so they
-  render as typed.
+  divider line to mark where the TL;DR ends and the post body begins. Use
+  a spaced dot row (`• • • • • • • • • •`), NOT repeated box-drawing dashes
+  (`───────────`) — the latter was tried and renders on LinkedIn as one
+  solid black bar, not a subtle line (caught 2026-09-14, don't repeat).
+  These are real Unicode characters/repeated punctuation, not Markdown
+  syntax, so they render as typed.
 - LinkedIn posts are roughly half the length of earlier drafts (owner,
   2026-09-14) — cut supporting detail and let the blog carry the full
   breakdown; the LinkedIn version's job is to summarize and drive the
@@ -103,6 +105,17 @@ Rules:
   not buffer.") or a named method/term being introduced, using the same
   Unicode-bold technique. Moderate use — enough to make the post skimmable,
   not every sentence.
+- Leave detailed caveats/limitations ("the honest gap," unverified-claim
+  hedging, etc.) off the LinkedIn version (owner, 2026-09-14) — that level
+  of nuance belongs on the blog, per the sourcing rules in §6, which still
+  apply there in full. LinkedIn stays a summary and hook, not a condensed
+  restatement of every caveat.
+- Avoid LinkedIn's reserved "little text format" characters in the LinkedIn
+  file's own prose — `| { } @ [ ] ( ) < > # \ * _ ~` (owner, 2026-09-14,
+  after this truncated a live post twice). Prefer rewriting around them
+  (e.g. ` - ... - ` instead of parentheses) over relying on escaping at
+  send time, which has already been missed mid-pipeline. Real hashtags are
+  the one intentional exception.
 
 ## 4. Content workflow
 
