@@ -6,10 +6,16 @@ title: Learn with me Digest
 Short entries on Development, Testing, AI, and Processes — real problems
 from real work, written up as I work through them.
 
-I'm Yevhen (Eugene) Prodan, AI Quality Lead at Luxoft. This blog is where I
-think in public: I write up what I'm running into so I understand it
-better, and so others working on the same problems have something to
-compare notes against. More about me: [About Me]({{ '/about/' | relative_url }}).
+<img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Yevhen Prodan" style="width:140px; height:140px; border-radius:50%; object-fit:cover; float:left; margin:0 1.5rem 1rem 0;">
+
+I'm Yevhen (Eugene) Prodan, AI Quality Lead / AI Agent Architect for Quality
+Engineering at Luxoft, with 18+ years in test and project management for
+automotive software. This blog is where I think in public: I write up what
+I'm running into so I understand it better, and so others working on the
+same problems have something to compare notes against. More about me:
+[About Me]({{ '/about/' | relative_url }}).
+
+<div style="clear:both;"></div>
 
 Browse by topic:
 
