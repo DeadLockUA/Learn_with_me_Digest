@@ -40,10 +40,17 @@ block start (all three show "None outstanding" as of 2026-09-14).
   exercised for real.
 - Status: complete. See [M3 — Publish infra.md](M3%20—%20Publish%20infra.md).
 
-## M4 — Agent roster implementation
-- Build the six subagent roles (Topic Manager, Researcher, Editor, Critic,
-  Designer, Publisher) per HLD.md sequence, dispatched from one driving session.
-- Wire gates: topic approval → draft approval → image approval (Customer_requirements.md).
+## M4 — Agent roster implementation (done, 2026-09-14)
+- Built as `.claude/agents/{topic-manager,researcher,editor,critic,designer,
+  publisher}.md` + an orchestrating Skill (`.claude/skills/digest-entry/`,
+  `/digest-entry`) that dispatches them in sequence.
+- Wired all four gates: topic → draft/text → image → LinkedIn (the last one
+  kept as its own separate stop, never implied by the others).
+- Structurally dry-run verified (frontmatter parses, Skill references all
+  six roles correctly) — not yet exercised with real content, that's M5.
+- Concept.md's stale "Agents & roles" roster (Engineer/Blogger, no Topic
+  Manager/Publisher) retired in favor of HLD.md as source of truth.
+- Status: complete. See [M4 — Agent roster implementation.md](M4%20—%20Agent%20roster%20implementation.md).
 
 ## M5 — Pilot entry (end-to-end dry run)
 - Run one entry through the full flow manually, owner in the loop at every gate.

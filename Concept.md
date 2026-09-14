@@ -44,26 +44,11 @@ thread), or does the owner just carry it between sessions for now?
 
 ## Agents & roles
 
-**Decided:** split into roles, orchestrated as subagent types dispatched in
-sequence from one driving VS Code session (not a `Workflow`-tool pipeline,
-not a single agent doing everything).
-
-Roster:
-
-- **Editor** — writes and edits the entry (both formats). Output targets the
-  public reader, not the owner — it is **not** bound by this repo's own
-  house style (CLAUDE.md's terse/no-fluff output rules govern how an agent
-  talks to the owner in-session, not the digest content itself).
-- **Researcher** — searches the web for sourcing material.
-- **Critic** — reviews the draft (sourcing, tone, scope-drift) before it
-  reaches the owner.
-- **Designer** — generates the graphical part of a post via the OmniRoute
-  image API. Key stored locally in a gitignored `.env`.
-- **Engineer** — works out a solution/technical answer from given inputs,
-  when an entry needs one (e.g. a worked example, a fix, a technique).
-- **Blogger** — publishes the finished entry to the blog (Jekyll, deployed
-  via GitHub Actions on merge to main) and to LinkedIn (LinkedIn API,
-  automated).
+Built in M4 — see HLD.md "Components" and "Decided" for the actual roster
+(topic-manager, researcher, editor, critic, designer, publisher) and
+`.claude/agents/*.md` / `.claude/skills/digest-entry/` for the
+implementation. HLD.md is the source of truth for this now; not duplicated
+here.
 
 ## Trigger mechanism
 
