@@ -119,6 +119,9 @@ sequenceDiagram
 - Site generator: Jekyll.
 - Critic pass added before the draft reaches the owner.
 - Publisher posts to LinkedIn via the LinkedIn API (direct, no MCP).
+  Absolute last step of the pipeline — requires a separate, explicit owner
+  go-ahead right before posting, distinct from the text/image approval
+  gates (Customer_requirements.md, decided 2026-09-14).
 - Publisher deploys the blog via a GitHub Actions workflow.
 - Cadence: ad hoc, owner-initiated — no recurring trigger.
 - Research sourcing: open web search, no fixed allowlist.

@@ -16,9 +16,15 @@ block start (all three show "None outstanding" as of 2026-09-14).
 - Folders scaffolded (`.gitkeep` placeholders).
 - Status: complete.
 
-## M2 — Jekyll site skeleton
-- Scaffold Jekyll site, GitHub Pages config.
-- Confirm theme/layout minimal enough not to block content work.
+## M2 — Jekyll site skeleton (done, 2026-09-14)
+- Decided (HLD.md): GitHub Pages project site
+  (`deadlockua.github.io/Learn_with_me_Digest`, migration-ready for a custom
+  domain later); theme `minima`.
+- Scaffolded `_config.yml`, `Gemfile`, `index.md`, `.gitignore`; `entries/`
+  and non-post docs excluded from the Jekyll build.
+- Deviation (owner): local build verification deferred to M3's first GitHub
+  Actions run — no Ruby on the dev machine.
+- Status: complete. See [M2 — Jekyll site skeleton.md](M2%20—%20Jekyll%20site%20skeleton.md).
 
 ## M3 — Publish infra
 - Write GitHub Actions workflow: deploy Jekyll on merge to main.

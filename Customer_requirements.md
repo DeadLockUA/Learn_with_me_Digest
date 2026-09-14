@@ -47,7 +47,8 @@ for that).
    - Saved to git.
 
 8. **LinkedIn publish**
-   - Assistant posts the short version to LinkedIn.
+   - Assistant posts the short version to LinkedIn. Absolute last step of
+     the whole process — never automatic, even after blog publish.
 
 ## Approval gates (hard stops)
 
@@ -56,6 +57,7 @@ for that).
 | Topic | Owner approves topic before drafting starts |
 | Draft | Owner approves text before images are generated |
 | Images | Owner picks final image before saving/publishing |
+| LinkedIn publish | Owner gives explicit go-ahead immediately before posting — separate from and after the text/image approvals; blog publish (step 6) does not imply this approval |
 
 ## Decided
 
