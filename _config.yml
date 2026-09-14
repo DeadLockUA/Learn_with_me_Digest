@@ -11,6 +11,7 @@ header_pages:
   - testing.md
   - ai.md
   - processes.md
+  - about.md
 
 # entries/ and assets/images/entries/ hold LinkedIn short-form text and
 # per-entry images — not Jekyll content, keep them out of the build.
