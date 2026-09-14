@@ -9,10 +9,12 @@ block start (all three show "None outstanding" as of 2026-09-14).
 - AGENTS.md / BEHAVIOUR.md split, Concept.md, HLD.md, Customer_requirements.md agreed.
 - Status: complete.
 
-## M1 — Repository structure
-- Decide entries folder layout (per-entry folder: blog + LinkedIn + image).
-- Resolves AGENTS.md §8 (currently "not finalized").
-- Gate: owner decision, no drafting starts on real content before this.
+## M1 — Repository structure (done, 2026-09-14)
+- Decided: flat files, shared `YYYY-MM-DD-topic-slug` naming — `_posts/`
+  (blog), `entries/linkedin/` (short form), `assets/images/entries/` (image).
+  Metadata (topic, related_posts) in blog.md front matter. See AGENTS.md §8.
+- Folders scaffolded (`.gitkeep` placeholders).
+- Status: complete.
 
 ## M2 — Jekyll site skeleton
 - Scaffold Jekyll site, GitHub Pages config.

@@ -101,7 +101,7 @@ sequenceDiagram
 
 - `Themas.md` — raw topic backlog (read/write by Topic Manager).
 - Repo entries folder — canonical source of truth for every published entry
-  (both formats + chosen image), Jekyll source.
+  (both formats + chosen image), Jekyll source. Layout: AGENTS.md §8.
 - Image-gen API — **OmniRoute**, key stored in a local gitignored `.env`.
 - GitHub Pages — Jekyll blog, deployed via a **GitHub Actions** workflow
   triggered on merge to main.

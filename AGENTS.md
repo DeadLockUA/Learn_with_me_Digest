@@ -82,11 +82,15 @@ Rules:
 
 ## 8. Repository structure
 
-No content structure is finalized yet — this section will be updated once the
-first entries define it. Until then, don't invent directory layouts
-unprompted; raise structure proposals with the owner directly. (Content
-structure isn't tracked in [Concept.md](Concept.md) — that file covers the
-production pipeline: tools, agents, workflow.)
+Decided (owner, 2026-09-14): flat files, shared naming per entry
+`YYYY-MM-DD-topic-slug`, no per-entry folder.
+
+- Blog (long form) — `_posts/YYYY-MM-DD-topic-slug.md`, standard Jekyll post.
+  Metadata (`topic`, `related_posts` for continuity per §2) lives in its YAML
+  front matter — the single source of truth for entry metadata.
+- LinkedIn (short form) — `entries/linkedin/YYYY-MM-DD-topic-slug.md`, plain
+  file, not built by Jekyll.
+- Image — `assets/images/entries/YYYY-MM-DD-topic-slug.<ext>`.
 
 ## 9. Git workflow
 

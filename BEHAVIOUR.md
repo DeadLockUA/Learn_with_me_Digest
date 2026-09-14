@@ -30,6 +30,9 @@ this repo. Imported by [AGENTS.md](AGENTS.md) — see that file for why the
 ## Proposals & questions
 - When asking or proposing anything (options, approaches, decisions), give a quick evaluation:
   benefits vs drawbacks, so the user can decide fast.
+- Ask one question at a time — never bundle multiple questions in one message. Each question
+  offers concrete answer options with pros/cons, plus a recommended option, via the interactive
+  question tool (dialog), not as plain text.
 
 ## Development approach
 - Test-driven development **where the expected result is knowable up front** — logic, state,

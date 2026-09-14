@@ -27,14 +27,14 @@ A candidate end-to-end flow for one digest entry:
 ## Publishing channels — implementation
 
 The dual-format/cross-link/CTA rules themselves are policy, not an idea —
-see AGENTS.md §3. What's still open is how to *build* it:
+see AGENTS.md §3. Decided (owner, 2026-09-14):
 
-- Does the Editor draft both formats from one pass, or does drafting the
-  long form come first with the short form derived from it?
-- Is the LinkedIn CTA line templated (rotate through a fixed set of variants)
-  or freshly written per post within the two required functions?
-- Where does the cross-link get inserted — placeholder at draft time,
-  resolved once the blog URL exists post-publish?
+- Editor drafts the long form first; the short (LinkedIn) form is derived
+  from it, not written in a separate pass.
+- The LinkedIn CTA line is freshly written per post (not a templated
+  rotation) — Critic checks both required parts (AGENTS.md §3) are present.
+- The cross-link to the blog is inserted as a placeholder at draft time;
+  Publisher resolves it to the real URL before posting to LinkedIn.
 
 ## Topic continuity — implementation
 
