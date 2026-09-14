@@ -136,6 +136,13 @@ sequenceDiagram
 
 ## Remaining build tasks (decided, not blocking on further owner input)
 
+- Agent roster (M4, 2026-09-14): all six roles built as
+  `.claude/agents/*.md` (topic-manager, researcher, editor, critic,
+  designer, publisher) plus an orchestrating Skill
+  (`.claude/skills/digest-entry/SKILL.md`) that dispatches them in
+  sequence and stops at the four approval gates. Structurally dry-run
+  verified (frontmatter parses, Skill references all six agent names) —
+  not yet exercised end to end with real content; that's M5.
 - Owner: create LinkedIn Developer app, get `w_member_social` scope,
   complete OAuth, store token in `.env`.
 - GitHub Actions workflow file for Jekyll deploy: written and merged to
