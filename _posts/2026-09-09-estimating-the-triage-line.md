@@ -3,7 +3,7 @@ layout: post
 title: "Estimating the Triage Line When There's No Baseline to Size It From"
 date: 2026-09-09
 topics: [processes, ai, testing]
-related_posts: [2026-09-07-ai-assisted-testing-validation-layer]
+related_posts: [2026-09-07-ai-assisted-testing-validation-layer, 2026-09-17-a-batch-is-not-an-increment]
 image: /assets/images/entries/2026-09-09-estimating-the-triage-line.jpg
 ---
 
@@ -196,4 +196,4 @@ and replaceable — which is the most an estimate can honestly do until the data
   spread across sprints, it lands all at once and has to be sized up front. The angle: contrast the
   story-point/velocity assumptions (continuous flow, effort scales with artifact size) against the
   batch shape of AI output, using Alaswad's "story points fail to capture dominant sources of
-  effort" finding as the pivot.
+  effort" finding as the pivot. **Written up:** [A Batch Is Not an Increment]({% post_url 2026-09-17-a-batch-is-not-an-increment %}).
