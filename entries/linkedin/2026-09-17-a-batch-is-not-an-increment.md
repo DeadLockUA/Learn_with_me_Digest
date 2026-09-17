@@ -15,7 +15,7 @@ Follow-up to my last post on sizing the AI-test triage line. It asked: does the 
 𝗧𝘄𝗼-𝘀𝗶𝗱𝗲𝗱 𝗳𝗶𝘅, my opinion: 𝗯𝗲𝗳𝗼𝗿𝗲 𝘁𝗵𝗲 𝗿𝘂𝗻, write acceptance criteria - a requirements-up-front step, Waterfall-shaped, and rightly so, I think. 𝗔𝗳𝘁𝗲𝗿 𝘁𝗵𝗲 𝗿𝘂𝗻, re-slice the output into reviewable increments - the batch isn't split by default, but it can be.
 
 • • • • • • • • • •
-👉 If you're interested in the topic, I recommend visiting my blog, where I cover it in much more depth: BLOG-URL-PLACEHOLDER
+👉 If you're interested in the topic, I recommend visiting my blog, where I cover it in much more depth: https://yevhenprodan.com/2026/09/17/a-batch-is-not-an-increment.html
 • • • • • • • • • •
 
 Always happy to answer questions within my knowledge - ask away in the comments.
