@@ -19,10 +19,3 @@ real entry.
 3. **Quality per token** — one-shot, one-agent solutions are fast but risky;
    there's a quality/cost tradeoff worth naming explicitly.
 
-4. **Autonomous AI work is Waterfall, not Agile** — unsupervised/autonomous AI
-   execution behaves like Waterfall: no feedback loop mid-run, so you must
-   nail down requirements/validation criteria upfront like Waterfall demands.
-   Risk to call out: without a proper validation phase, you don't get "not
-   what you wanted" — you get exactly what you asked for, which can still be
-   wrong. Connects to idea 2 (Agile→AI principles, as a contrast/counterpoint)
-   and idea 3 (quality/cost tradeoff — missing validation is a cost cut).
