@@ -188,6 +188,10 @@ Decided (owner, 2026-09-14): flat files, shared naming per entry
   provides scores, append them to [models_benchmark.md](models_benchmark.md)
   (one round's ratings per model, per that file's existing format) before
   moving on — this is part of the same step, not a separate follow-up.
+  Then drop the model with the lowest average rating from the launch list
+  (owner, 2026-09-28): remove its `.env`/`.env.example` variable and its
+  `models_benchmark.md` row. Every round, until one model remains; on a
+  tie for lowest, ask the owner which to drop.
 
 ## 9. Git workflow
 

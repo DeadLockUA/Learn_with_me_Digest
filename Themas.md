@@ -16,6 +16,3 @@ real entry.
    principles and transform them into a set of AI-native principles (see
    idea 1 as a worked example of that transformation).
 
-3. **Quality per token** — one-shot, one-agent solutions are fast but risky;
-   there's a quality/cost tradeoff worth naming explicitly.
-
