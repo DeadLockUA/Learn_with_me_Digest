@@ -74,6 +74,10 @@ only as "the key" if you need to mention it in a report.
 2a. Once the owner provides scores, append them to `models_benchmark.md`
    (one round's ratings per model, matching that file's existing format)
    before moving on — do this every round, not just when asked.
+2b. Then drop the model with the lowest average rating (owner, 2026-09-28):
+   delete its variable from `.env` and `.env.example` and its row from
+   `models_benchmark.md`. Every round, until one model remains; on a tie
+   for lowest, ask the owner which to drop.
 3. If a model call fails (missing var, real 404, API error), still include
    it in the table with the failure noted — do not silently drop it or
    retry-loop.
