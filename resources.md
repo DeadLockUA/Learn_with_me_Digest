@@ -1,10 +1,21 @@
 # resources.md — Authoritative Source List
 
 Curated reference list, not a digest entry. Top 10 per recurring topic
-(§2, AGENTS.md) plus one cross-topic block. Selection bar: primary or
+(§2, AGENTS.md) plus one cross-topic block and an Officials block. Selection bar: primary or
 practitioner-authored, actively maintained, no vendor marketing or
 affiliate content farms. Each source appears once; cross-topic ones live
 in the General block.
+
+## Officials (Claude & Codex)
+
+Official vendor channels for the two coding agents used in this repo —
+feeds the "Officials say:" section of News Around the World. Primary
+sources, but vendor framing: report what shipped, not the marketing.
+
+1. [Claude Code — What's new](https://code.claude.com/docs/en/whats-new) — weekly digest of notable Claude Code features.
+2. [Anthropic News](https://www.anthropic.com/news) — model launches and product announcements.
+3. [ChatGPT & Codex Changelog](https://learn.chatgpt.com/docs/changelog) — Codex CLI/IDE/cloud releases (shared log; Codex items only).
+4. [OpenAI News](https://openai.com/news/) — model launches and product announcements.
 
 ## Testing
 
