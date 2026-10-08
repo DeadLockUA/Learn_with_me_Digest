@@ -12,9 +12,21 @@ digest entry — it does not go through the six-role pipeline
 
 ## Scope
 
-- Covers every source in [resources.md](../../../resources.md): all four
-  topic blocks (Testing, Development, AI, Processes) plus the General
-  (cross-topic) block.
+- Covers every source in [resources.md](../../../resources.md): the
+  Officials block, all four topic blocks (Testing, Development, AI,
+  Processes) plus the General (cross-topic) block.
+- **Officials say:** — official announcements from the vendors of the two
+  coding agents used here, Claude (Anthropic) and Codex (OpenAI): new
+  models, new features, notable docs/blog posts. Rules specific to it:
+  - Codex changelog is shared with ChatGPT — keep only Codex items (CLI,
+    IDE extension, cloud, Codex models); skip ChatGPT-app-only entries.
+  - Vendor news pages: keep only model launches and items relevant to
+    Claude/Claude Code or Codex — not policy, hiring, or company news.
+  - Claude "What's new" is a weekly digest without a per-day date: include
+    a week's entry on the first run where it's listed and not already on
+    an earlier `_news/` page (grep `_news/` for its week URL first).
+  - Patch-level bug-fix noise stays out — one bullet per notable release
+    or feature, not per version.
 - Only items **published today** (the date this skill runs). If a source
   has nothing today, skip it — do not pad with older items.
 - Thesis-style bullets only: one line per item, the core claim/news, not a
@@ -41,10 +53,10 @@ digest entry — it does not go through the six-role pipeline
      is fine for the owner in chat, not in the file.
    - For each item found, write one thesis bullet: the concrete claim, not
      just a headline paraphrase, with a link to the item.
-4. **Group bullets by the resources.md topic block** the source lives in
-   (Testing / Development / AI / Processes / General), matching the four
-   recurring topics (AGENTS.md §2) plus a General section for cross-topic
-   sources.
+4. **Group bullets by the resources.md block** the source lives in
+   (Officials / Testing / Development / AI / Processes / General) — the
+   Officials section first, then the four recurring topics (AGENTS.md §2),
+   then General for cross-topic sources.
 5. **Write the page** using the template below to
    `_news/YYYY-MM-DD.md`. English only (AGENTS.md §5), no exceptions.
 6. **No owner approval gate required** — this is a source roundup, not an
@@ -63,6 +75,10 @@ digest entry — it does not go through the six-role pipeline
 title: "News Around the World — YYYY-MM-DD"
 date: YYYY-MM-DD
 ---
+
+## Officials say:
+
+- [Claude Code — What's new](url) — one-line thesis of the release/feature.
 
 ## Testing
 
