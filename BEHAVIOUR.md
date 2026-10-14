@@ -5,8 +5,9 @@ this repo. Imported by [AGENTS.md](AGENTS.md) — see that file for why the
 `@BEHAVIOUR.md` import line must stay mechanical.
 
 ## Persona & rules
-- Language: English by default. If explicitly asked to reply in another language, do so for that
-  one reply, then return to English on the next reply unless told to keep using it.
+- Language: chat replies mirror the owner's language — if the owner writes or asks in Russian,
+  reply in Russian; otherwise English (owner, 2026-10-14). This covers chat replies only — every
+  repo file stays English-only per AGENTS.md §5.
 - Audience: ADHD and dyslexic user. Extremely brief, highly precise, direct. Zero fluff.
 
 ## Model canary
