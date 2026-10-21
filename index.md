@@ -75,16 +75,17 @@ Browse by topic:
       {%- assign labels = labels | append: label | append: "|" -%}
     {%- endfor -%}
     {%- assign labels = labels | split: "|" %}
-    {% if labels.size > 0 %}<span class="post-topics">{{ labels | join: " · " }}</span>{% endif %}
+    <span class="post-topics">{{ labels | join: " · " }}</span>
   </li>
   {% endfor %}
 </ul>
 <style>
-.post-list-home li { display: flex; align-items: baseline; white-space: nowrap; }
-.post-list-home li::before { content: "•"; margin-right: 0.6em; }
-.post-list-home .home-post-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
-.post-list-home .post-topics { flex-shrink: 0; }
-.post-topics { margin-left: 1.5em; color: #828282; font-size: 0.9em; }
+.post-list-home { display: grid; grid-template-columns: auto minmax(0, max-content) max-content; column-gap: 0.6em; align-items: baseline; list-style: none; }
+.post-list-home li { display: contents; }
+.post-list-home li::before { content: "•"; }
+.post-list-home .home-post-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.post-list-home .post-topics { margin-left: 0.9em; white-space: nowrap; }
+.post-topics { color: #828282; font-size: 0.9em; }
 </style>
 {% else %}
 <p>No entries yet.</p>
