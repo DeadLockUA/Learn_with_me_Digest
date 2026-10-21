@@ -36,7 +36,7 @@ the error decides who ends up doing that.
 | False pass (defect accepted) | Defect ships with a "verified" stamp | Support, ops, customers, later | Someone else's budget | Almost never |
 
 This table is a framework, not a measurement. No source I found prices both directions in
-hours or money for an LLM judge; see "The honest gap" below. The asymmetry it rests on is not
+hours or money for an LLM judge. The asymmetry it rests on is not
 a multiplier — it is **who gets charged**. A false fail is debited to the verifier. A false
 pass is debited to the incident queue, where it is indistinguishable from any other escaped
 defect, and the verifier's record stays clean.
@@ -191,26 +191,6 @@ Opinion from here on, labelled as such.
 6. **Watch for the oversight-off cliff.** If false fails are high enough that people start
    bypassing the judge, the false-pass rate is about to go to 100%. That is a false-fail cost,
    and it belongs in the same discussion.
-
-## The honest gap
-
-- **No source prices both directions.** The cost split in this post is a framework I am
-  proposing, not a measured result. The case study measures misses only; the oversight paper
-  identifies the false-fail cost as operational and does not quantify it; the SLMJury error
-  breakdown is counts, not costs.
-- **The illustrative table is invented.** The 90/10 split is chosen to make the point, not
-  taken from any dataset.
-- **The "false positives dominate" result is for three small judges only** (Phi-4, Qwen3-8B,
-  Qwen3-14B, at the short-verdict budget; the paper's full range is 0.6B-14B). Whether
-  frontier judges err in the same direction is not established by these sources.
-- **The production case study is one company, one agent, one preprint.** Its "3-6x
-  undercount" is the authors' own estimator and they call it directional.
-- **The self-play paper is single-author and a preprint.** Its numbers are specific and the
-  setup is described, but nobody independent has reproduced them.
-- **The 100x folklore is contested.** Boehm and Basili give 5:1 for small systems; Menzies et
-  al. found no consistent effect; the IBM chart has no data behind it. The argument above
-  deliberately does not depend on a multiplier.
-- **The OneUptime piece is a practitioner's opinion**, cited as such, not as evidence.
 
 ## Where this goes next
 

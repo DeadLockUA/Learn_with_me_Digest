@@ -105,9 +105,10 @@ Rules:
   not buffer.") or a named method/term being introduced, using the same
   Unicode-bold technique. Moderate use — enough to make the post skimmable,
   not every sentence.
-- Leave detailed caveats/limitations ("the honest gap," unverified-claim
-  hedging, etc.) off the LinkedIn version (owner, 2026-09-14) — that level
-  of nuance belongs on the blog, per the sourcing rules in §6, which still
+- Leave detailed caveats/limitations (unverified-claim hedging, etc.) off
+  the LinkedIn version (owner, 2026-09-14) — that level of nuance belongs
+  on the blog, inline next to each claim (no separate "The honest gap"
+  section — owner, 2026-10-21), per the sourcing rules in §6, which still
   apply there in full. LinkedIn stays a summary and hook, not a condensed
   restatement of every caveat.
 - Avoid LinkedIn's reserved "little text format" characters in the LinkedIn
