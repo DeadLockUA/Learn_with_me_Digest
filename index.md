@@ -63,3 +63,23 @@ Browse by topic:
   <a class="category-button" href="{{ '/processes/' | relative_url }}">Processes</a>
   <a class="category-button category-button--news" href="{{ '/news/' | relative_url }}">News Around the World</a>
 </div>
+
+{% if site.posts.size > 0 %}
+<ul>
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {%- assign labels = "" -%}
+    {%- for t in post.topics -%}
+      {%- if t == "ai" -%}{%- assign label = "AI" -%}{%- else -%}{%- assign label = t | capitalize -%}{%- endif -%}
+      {%- assign labels = labels | append: label | append: "|" -%}
+    {%- endfor -%}
+    {%- assign labels = labels | split: "|" %}
+    {% if labels.size > 0 %}<span class="post-topics">{{ labels | join: " · " }}</span>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+<style>.post-topics { margin-left: 1.5em; color: #828282; font-size: 0.9em; }</style>
+{% else %}
+<p>No entries yet.</p>
+{% endif %}
