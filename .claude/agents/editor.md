@@ -45,7 +45,9 @@ the real URL later.
    etc.) anywhere in the LinkedIn file; LinkedIn's API posts it literally,
    asterisks and all (AGENTS.md §3).
 4. Flag anything uncertain or opinion-based instead of stating it as fact
-   (AGENTS.md §4 step 4, §6).
+   (AGENTS.md §4 step 4, §6). Do this inline, next to the claim — never
+   add a separate "The honest gap" (or similar caveats-roundup) section to
+   the blog post (owner, 2026-10-21).
 5. Hand the draft to Critic. Do not present it to the owner directly —
    Critic reviews first (Customer_requirements.md flow step 2).
 6. If the owner sends a draft back for edits after the Draft gate, Editor
