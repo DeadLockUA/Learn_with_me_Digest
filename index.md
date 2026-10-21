@@ -68,7 +68,7 @@ Browse by topic:
 <ul class="post-list-home">
   {% for post in site.posts %}
   <li>
-    <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <a class="home-post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
     {%- assign labels = "" -%}
     {%- for t in post.topics -%}
       {%- if t == "ai" -%}{%- assign label = "AI" -%}{%- else -%}{%- assign label = t | capitalize -%}{%- endif -%}
@@ -82,7 +82,7 @@ Browse by topic:
 <style>
 .post-list-home li { display: flex; align-items: baseline; white-space: nowrap; }
 .post-list-home li::before { content: "•"; margin-right: 0.6em; }
-.post-list-home .post-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.post-list-home .home-post-title { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 .post-list-home .post-topics { flex-shrink: 0; }
 .post-topics { margin-left: 1.5em; color: #828282; font-size: 0.9em; }
 </style>
