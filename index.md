@@ -3,6 +3,8 @@ layout: home
 title: Learn with me Digest
 ---
 
+<img src="{{ '/assets/images/logo-ultrawide.jpg' | relative_url }}" alt="Learn with me Digest" style="display:block; width:100%; height:auto; border-radius:8px; margin-bottom:1.5rem;">
+
 Short entries on Development, Testing, AI, and Processes — real problems
 from real work, written up as I work through them.
 
