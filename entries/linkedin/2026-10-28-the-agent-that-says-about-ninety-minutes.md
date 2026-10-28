@@ -10,13 +10,10 @@ Two facts that changed how I plan agent work:
 
 What works instead: do not ask for a duration. Ask for a step count, multiply by the per-step cost from your own logs, add the retry loop and the test-suite runtime, and list the human waits separately. Give the agent the current time and its own history, and the estimate turns from a guess into arithmetic.
 
-The full breakdown - the ranked factor table, a copy-paste estimation prompt, a scoring rubric, the telemetry setup for Claude Code and Codex, and a before/after worked example - is on the blog. Link in the first comment.
+The full breakdown - the ranked factor table, a copy-paste estimation prompt, a scoring rubric, the telemetry setup for Claude Code and Codex, and a before/after worked example - is on the blog.
 
 One question: when your agent says a task will take an hour, which clock do you hear - machine minutes, or time until it is merged?
 
-#AIAgents #AgenticCoding #Estimation #DeveloperProductivity #ClaudeCode
-
-• • • • • • • • • •
-FIRST COMMENT - post separately, immediately after the post goes live:
-
 Full post, with sources and the caveats on every number: https://yevhenprodan.com/2026/10/28/the-agent-that-says-about-ninety-minutes.html
+
+#AIAgents #AgenticCoding #Estimation #DeveloperProductivity #ClaudeCode
