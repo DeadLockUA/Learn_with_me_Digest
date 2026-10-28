@@ -19,4 +19,4 @@ One question: when your agent says a task will take an hour, which clock do you 
 • • • • • • • • • •
 FIRST COMMENT - post separately, immediately after the post goes live:
 
-Full post, with sources and the caveats on every number: BLOG-URL-PLACEHOLDER
+Full post, with sources and the caveats on every number: https://yevhenprodan.com/2026/10/28/the-agent-that-says-about-ninety-minutes.html
