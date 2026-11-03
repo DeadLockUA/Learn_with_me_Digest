@@ -70,14 +70,9 @@ only as "the key" if you need to mention it in a report.
    trademarked brand marks in the image."`
 2. Collect all candidates into one summary table (model name → path/link to
    the generated image) and present it to the owner in a single message.
-   Ask the owner to score each candidate 0-10.
-2a. Once the owner provides scores, append them to `models_benchmark.md`
-   (one round's ratings per model, matching that file's existing format)
-   before moving on — do this every round, not just when asked.
-2b. Then drop the model with the lowest average rating (owner, 2026-09-28):
-   delete its variable from `.env` and `.env.example` and its row from
-   `models_benchmark.md`. Every round, until one model remains; on a tie
-   for lowest, ask the owner which to drop.
+   Ask the owner to pick one. No scores, no `models_benchmark.md` updates,
+   no dropping models (owner, 2026-11-03 — scoring and drop-lowest
+   cancelled; that file is archived history).
 3. If a model call fails (missing var, real 404, API error), still include
    it in the table with the failure noted — do not silently drop it or
    retry-loop.

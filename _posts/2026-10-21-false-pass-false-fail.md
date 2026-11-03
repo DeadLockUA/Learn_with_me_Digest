@@ -3,7 +3,7 @@ layout: post
 title: "False Pass vs False Fail: The Verifier Error Nobody Prices"
 date: 2026-10-21
 topics: [testing, ai]
-related_posts: [2026-09-28-quality-per-token, 2026-09-07-ai-assisted-testing-validation-layer, 2026-09-09-estimating-the-triage-line]
+related_posts: [2026-09-28-quality-per-token, 2026-09-07-ai-assisted-testing-validation-layer, 2026-09-09-estimating-the-triage-line, 2026-11-03-update-the-inspectors-checklist]
 image: /assets/images/entries/2026-10-21-false-pass-false-fail.jpg
 ---
 
@@ -182,7 +182,8 @@ Opinion from here on, labelled as such.
    contains known-good *and* known-bad items, and count errors in each direction.
 3. **Route false-pass incidents back to the judge.** When a shipped defect turns out to have
    passed verification, record it against the verifier, not just the feature. Otherwise the
-   judge's record stays clean by construction.
+   judge's record stays clean by construction. What to do with the verifier once it's charged
+   is the [next post]({% post_url 2026-11-03-update-the-inspectors-checklist %}).
 4. **Treat a 0% judge rate as "unknown," not "clean."** Per the production case study, a zero
    cannot bound the true rate. If the judge reports nothing, audit by hand before believing it.
 5. **Pick the error direction on purpose.** The persona results show the direction is

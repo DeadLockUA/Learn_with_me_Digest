@@ -1,5 +1,8 @@
 # models_benchmark.md
 
+> **Archived (owner, 2026-11-03):** ratings are no longer collected and
+> models are no longer dropped. Kept as history only; see AGENTS.md §8.
+
 Tracks the owner's ratings (0-10) for image-generation models tried for digest
 entry images, across benchmarking rounds. A model with any rating below 3 is
 excluded from future rounds (derived from the ratings list below — no

@@ -184,15 +184,11 @@ Decided (owner, 2026-09-14): flat files, shared naming per entry
   `OPENROUTER_IMAGE_MODEL` plus every named `OPENROUTER_IMAGE_MODEL_*`
   variant), dispatched in parallel, one candidate per model — not just the
   pinned default. Collect the results into one summary table (model →
-  candidate image) and present it to the owner, who scores each candidate
-  0-10. Owner picks the final image from that table. Once the owner
-  provides scores, append them to [models_benchmark.md](models_benchmark.md)
-  (one round's ratings per model, per that file's existing format) before
-  moving on — this is part of the same step, not a separate follow-up.
-  Then drop the model with the lowest average rating from the launch list
-  (owner, 2026-09-28): remove its `.env`/`.env.example` variable and its
-  `models_benchmark.md` row. Every round, until one model remains; on a
-  tie for lowest, ask the owner which to drop.
+  candidate image) and present it to the owner, who picks the final image
+  from that table. No scoring, no benchmark, no dropping models (owner,
+  2026-11-03 — cancels the 0-10 scoring and the drop-lowest rule of
+  2026-09-28); [models_benchmark.md](models_benchmark.md) is archived
+  history only.
 
 ## 9. Git workflow
 
