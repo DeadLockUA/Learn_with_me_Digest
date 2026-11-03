@@ -143,6 +143,11 @@ Rules:
 
 - Cite sources for specific claims, benchmarks, version numbers, or tool
   behavior.
+- Every citation in a blog post is a clickable link to the resource itself
+  (owner, 2026-11-03) — never a bare arXiv ID, issue number, or doc name in
+  plain text. A repeat mention that brings a new quote or figure is linked
+  again; a plain repeat isn't required to be. A source with no URL (e.g. a
+  printed book) says so inline.
 - Never fabricate statistics, quotes, or citations.
 - Distinguish fact from opinion explicitly when it isn't obvious from context.
 - If a claim can't be verified, say so rather than presenting it as settled.
