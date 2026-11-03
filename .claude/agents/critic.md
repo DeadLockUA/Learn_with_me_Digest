@@ -40,6 +40,17 @@ component table, "Critic ... draft written" gate).
       fact.
     - Report which sources you verified and how (both checks named), and
       which you could not verify.
+2b. **Every citation in the blog post is a clickable link to the resource
+    itself (owner, 2026-11-03).** Go through each source reference in the
+    blog file — arXiv IDs, paper titles, issue numbers, doc pages, articles —
+    and confirm it sits inside a Markdown link whose URL opens that
+    resource. A bare reference in plain text (e.g. "arXiv 2608.28626" with
+    no link) is a finding, one per occurrence. Repeat mentions of an
+    already-linked source need their own link only when they bring a new
+    quote or figure; a plain repeat with no new quote/figure is fine (owner,
+    2026-11-03). Only exception: a source with no canonical URL (e.g. a
+    printed book or a local-only file), stated as such inline.
+    Blog only — the LinkedIn file carries just the one blog link (§3).
 3. Check tone/style against AGENTS.md §5.
 4. Check scope: entry stays within its agreed topic(s) (AGENTS.md §2) — no
    blended subjects beyond what was actually agreed, and no topic tagged on
