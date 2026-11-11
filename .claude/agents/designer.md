@@ -63,9 +63,25 @@ only as "the key" if you need to mention it in a report.
    fixed prompt template for every model (owner, 2026-09-14, do not
    paraphrase or embellish it): `"Generate a picture to be a good companion
    for the post:"` followed by the full text of the entry's LinkedIn file
-   (`entries/linkedin/YYYY-MM-DD-topic-slug.md`) verbatim, followed by a
-   fixed closing instruction (owner, 2026-09-14): `"Avoid any logos or
-   trademarked brand marks in the image."`
+   (`entries/linkedin/YYYY-MM-DD-topic-slug.md`) verbatim, followed by the
+   fixed mascot instruction (owner, 2026-11-11 — see [Mascot.md](../../Mascot.md)):
+   `"Include the digest's mascot from the attached reference image, keeping
+   its exact character design: a yellow glossy rubber duck bath toy with a
+   flat bottom and no legs, expressive eyes with eyebrows, sleek AR glasses
+   with a cyan LED that project a glowing cyan holographic panel beside its
+   head. The mascot either asks the post's key question (the hologram shows
+   a question mark) or delivers its answer (the hologram shows a check mark
+   or a short answer) - pick whichever fits the post. Warm cozy lighting on
+   the scene, cyan glow only from the hologram, modern stylized 3D."`,
+   followed by a fixed closing instruction (owner, 2026-09-14): `"Avoid any
+   logos or trademarked brand marks in the image."`
+   Every call also sends the reference image
+   `assets/images/mascot/duck-reference.png` as a base64 data URL in
+   `input_references`, as an object, not a plain string (a string returns
+   HTTP 400): `[{"type": "image_url", "image_url": {"url":
+   "data:image/png;base64,<b64>"}}]`. All three `.env` models accepted it
+   (verified 2026-11-11). If the reference file is missing, stop and report
+   it; do not generate without it.
 2. Collect all candidates into one summary table (model name → path/link to
    the generated image) and present it to the owner in a single message.
    Ask the owner to pick one. No scores, no `models_benchmark.md` updates,
