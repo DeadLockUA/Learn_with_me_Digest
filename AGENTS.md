@@ -194,6 +194,10 @@ Decided (owner, 2026-09-14): flat files, shared naming per entry
   2026-11-03 — cancels the 0-10 scoring and the drop-lowest rule of
   2026-09-28); [models_benchmark.md](models_benchmark.md) is archived
   history only.
+- Mascot (owner, 2026-11-11): every entry image features the digest's
+  mascot, a rubber duck that asks or answers the post's question. Its
+  character sheet and reference image live in [Mascot.md](Mascot.md); the
+  Designer passes that reference image to every model call.
 
 ## 9. Git workflow
 
