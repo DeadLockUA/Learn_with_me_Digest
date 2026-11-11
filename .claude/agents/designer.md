@@ -82,6 +82,24 @@ only as "the key" if you need to mention it in a report.
    "data:image/png;base64,<b64>"}}]`. All three `.env` models accepted it
    (verified 2026-11-11). If the reference file is missing, stop and report
    it; do not generate without it.
+1b. Cold-reader check (owner, 2026-11-11 — AGENTS.md §8). The image must
+   explain itself to someone who never read the post, and pull them into
+   it. Run this check twice: on the prompt text before sending it, and on
+   every candidate afterwards (open each image and read its visible text).
+   For each piece of visible text (titles, speech bubbles, labels, footer),
+   flag it if any of these is true:
+   - it uses a term that only makes sense inside the post — a bare "line",
+     "item", "the example", "red/green", "the pair", "the corpus" — without
+     naming what it belongs to (e.g. "a rule in my AI code reviewer's
+     checklist");
+   - the problem it raises cannot be understood without the post — what
+     thing, whose, and what goes wrong must all be visible in the image;
+   - it hands over the full answer with nothing left to click for, or reads
+     as nonsense to a newcomer ("what is this even about?") — either way it
+     doesn't make anyone want to open the post.
+   A prompt that fails is rewritten before sending. A candidate that fails
+   is still shown to the owner (no dropping), with each flagged text quoted
+   and the reason, in the summary table.
 2. Collect all candidates into one summary table (model name → path/link to
    the generated image) and present it to the owner in a single message.
    Ask the owner to pick one. No scores, no `models_benchmark.md` updates,

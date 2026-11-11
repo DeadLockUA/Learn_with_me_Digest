@@ -198,6 +198,11 @@ Decided (owner, 2026-09-14): flat files, shared naming per entry
   mascot, a rubber duck that asks or answers the post's question. Its
   character sheet and reference image live in [Mascot.md](Mascot.md); the
   Designer passes that reference image to every model call.
+- The image must stand on its own (owner, 2026-11-11): a reader who never
+  saw the post understands from the image alone what problem it is about,
+  and wants to open the post to learn more. No post-internal shorthand in
+  image text. Designer's procedure for checking this is in
+  [designer.md](.claude/agents/designer.md) step 1b.
 
 ## 9. Git workflow
 
