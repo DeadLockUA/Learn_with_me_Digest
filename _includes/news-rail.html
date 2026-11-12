@@ -1,0 +1,34 @@
+{%- comment -%}
+  Left rail: latest 3 "News Around the World" days, newest open, older folded.
+  Headlines come from each day's list items: first link = href + text, "Source — " prefix dropped.
+  A doc's content may still be Markdown when this renders (render order), so it is markdownified if it has no <li> yet.
+{%- endcomment -%}
+{%- assign news_days = site.news | sort: "date" | reverse -%}
+{%- if news_days.size > 0 -%}
+<aside class="news-rail" aria-label="News Around the World">
+  <a class="news-rail__mast" href="{{ '/news/' | relative_url }}">News Around the World</a>
+  <div class="news-rail__sub">Daily, from the sources I follow</div>
+  {%- for day in news_days limit: 3 -%}
+    {%- assign day_html = day.content -%}
+    {%- unless day_html contains "<li" -%}{%- assign day_html = day_html | markdownify -%}{%- endunless -%}
+    {%- assign day_items = day_html | split: "<li>" %}
+  <details class="news-rail__day"{% if forloop.first %} open{% endif %}>
+    <summary>{{ day.date | date: "%A" }}<span>{{ day.date | date: "%-d %b" }} · {{ day_items.size | minus: 1 }}</span></summary>
+    <ul>
+      {%- for part in day_items offset: 1 -%}
+        {%- assign href_parts = part | split: 'href="' -%}
+        {%- if href_parts.size < 2 -%}{%- continue -%}{%- endif -%}
+        {%- assign item_href = href_parts[1] | split: '"' | first -%}
+        {%- assign item_text = href_parts[1] | split: "</a>" | first | split: '">' | last | strip_html | strip -%}
+        {%- assign text_parts = item_text | split: " — " -%}
+        {%- if text_parts.size > 1 and text_parts[0].size <= 32 -%}
+          {%- assign item_text = item_text | remove_first: text_parts[0] | remove_first: " — " -%}
+        {%- endif %}
+      <li><a href="{{ item_href }}" title="{{ item_text | escape }}">{{ item_text }}</a></li>
+      {%- endfor %}
+    </ul>
+  </details>
+  {%- endfor %}
+  <a class="news-rail__more" href="{{ '/news/' | relative_url }}">All days →</a>
+</aside>
+{%- endif -%}

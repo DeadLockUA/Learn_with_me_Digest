@@ -1,0 +1,85 @@
+/* News Around the World rail. Shown only where it fits left of minima's 740px column (mirrors the duck on the right). */
+.news-rail {
+  display: none;
+}
+
+@media (min-width: 1300px) {
+  .news-rail {
+    display: block;
+    position: absolute;
+    top: 90px;
+    right: calc(50% + 370px + 24px); /* 24px gap to the content column */
+    width: 240px;
+    padding-left: 12px;
+    border-left: 3px solid #111;
+    font-size: 13px;
+    line-height: 1.35;
+    color: #111;
+  }
+}
+
+.news-rail__mast {
+  display: block;
+  font: 900 18px/1.15 Georgia, "Times New Roman", serif;
+  color: #111;
+}
+
+.news-rail__mast:hover {
+  text-decoration: none;
+  color: #2a7ae2;
+}
+
+.news-rail__sub,
+.news-rail__more {
+  font: italic 12px Georgia, "Times New Roman", serif;
+}
+
+.news-rail__sub {
+  color: #828282;
+  margin: 2px 0 8px;
+}
+
+.news-rail__day {
+  border-top: 1px solid #e8e8e8;
+  padding: 6px 0;
+}
+
+.news-rail__day summary {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.news-rail__day summary span {
+  font-weight: 400;
+  color: #828282;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.news-rail__day ul {
+  margin: 6px 0 2px 14px;
+}
+
+.news-rail__day li {
+  margin: 4px 0;
+}
+
+.news-rail__day li a {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.news-rail__more {
+  display: block;
+  border-top: 1px solid #e8e8e8;
+  padding-top: 6px;
+}
