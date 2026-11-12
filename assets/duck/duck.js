@@ -28,10 +28,13 @@ function el(tag, attrs = {}, parent) {
   return node;
 }
 
-function setClip(video, name) {
+// Errors fire per <source>; only the last one failing means no source can play,
+// so the WebM error must not abort before the MP4 fallback is tried.
+function setClip(video, name, onNoSource) {
   video.replaceChildren();
   el("source", { src: new URL(`clips/${name}.webm`, BASE).href, type: "video/webm" }, video);
-  el("source", { src: new URL(`clips/${name}.mp4`, BASE).href, type: "video/mp4" }, video);
+  const last = el("source", { src: new URL(`clips/${name}.mp4`, BASE).href, type: "video/mp4" }, video);
+  last.addEventListener("error", onNoSource, { once: true });
   video.load();
 }
 
@@ -43,7 +46,7 @@ function makeVideo(stage) {
 
 function build() {
   const root = el("aside", { class: "duck-widget", "aria-label": "Duck mascot fact" });
-  const bubble = el("div", { class: "duck-bubble", role: "status" }, root);
+  const bubble = el("div", { class: "duck-bubble", "aria-live": "off" }, root);
   const text = el("p", {}, bubble);
   const source = el("a", { class: "duck-source", target: "_blank", rel: "noopener" }, bubble);
   source.textContent = "source";
@@ -63,15 +66,16 @@ function setupVideos(stage) {
     idle.remove();
     reaction.remove();
   };
-  idle.addEventListener("error", fail, true);
-  setClip(idle, "idle");
+  setClip(idle, "idle", fail);
   idle.addEventListener("playing", () => idle.classList.add("is-on"), { once: true });
   idle.play().catch(fail);
 
   return function react(name) {
     if (broken || !name) return;
-    reaction.addEventListener("error", () => reaction.classList.remove("is-on"), { once: true, capture: true });
-    setClip(reaction, name);
+    setClip(reaction, name, () => {
+      reaction.classList.remove("is-on");
+      idle.classList.add("is-on");
+    });
     reaction.addEventListener(
       "playing",
       () => {

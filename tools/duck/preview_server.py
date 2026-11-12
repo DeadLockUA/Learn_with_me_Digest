@@ -1,6 +1,6 @@
 """Local preview of the duck widget without Jekyll (no Ruby needed).
 
-  python tools/duck/preview_server.py [--port 4000] [--facts PATH | --facts-missing]
+  python tools/duck/preview_server.py [--port 4000] [--facts PATH | --facts-missing] [--no-webm]
 
 Serves the repo root; /assets/duck/facts.json is rendered from YAML the way the
 Liquid template does it. Open http://localhost:4000/tools/duck/preview.html
@@ -20,8 +20,12 @@ ROOT = Path(__file__).resolve().parents[2]
 class Handler(SimpleHTTPRequestHandler):
     facts_path = ROOT / "_data" / "duck_facts.yml"
     facts_missing = False
+    no_webm = False
 
     def do_GET(self):
+        if self.no_webm and self.path.split("?")[0].endswith(".webm"):
+            self.send_error(404)
+            return
         if self.path.split("?")[0] == "/assets/duck/facts.json":
             if self.facts_missing:
                 self.send_error(404)
@@ -45,10 +49,12 @@ def main():
     p.add_argument("--port", type=int, default=4000)
     p.add_argument("--facts")
     p.add_argument("--facts-missing", action="store_true")
+    p.add_argument("--no-webm", action="store_true", help="404 every .webm to test the MP4 fallback")
     a = p.parse_args()
     if a.facts:
         Handler.facts_path = Path(a.facts)
     Handler.facts_missing = a.facts_missing
+    Handler.no_webm = a.no_webm
     server = ThreadingHTTPServer(("127.0.0.1", a.port), partial(Handler, directory=str(ROOT)))
     print(f"http://localhost:{a.port}/tools/duck/preview.html", flush=True)
     server.serve_forever()
