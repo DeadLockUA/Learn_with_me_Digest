@@ -1,15 +1,21 @@
-/* News Around the World rail. Shown only where it fits left of minima's 740px column (mirrors the duck on the right). */
+/* News Around the World rail. Fills the left gutter of <main> (header to footer) where it fits beside minima's 740px column; mirrors the duck on the right. */
 .news-rail {
   display: none;
 }
 
 @media (min-width: 1300px) {
+  .page-content {
+    position: relative;
+  }
+
   .news-rail {
-    display: block;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    top: 90px;
+    top: 30px;    /* minima .page-content vertical padding */
+    bottom: 30px;
+    left: 16px;
     right: calc(50% + 370px + 24px); /* 24px gap to the content column */
-    width: 240px;
     padding-left: 12px;
     border-left: 3px solid #111;
     font-size: 13px;
@@ -37,6 +43,12 @@
 .news-rail__sub {
   color: #828282;
   margin: 2px 0 8px;
+}
+
+.news-rail__days {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .news-rail__day {
@@ -79,6 +91,7 @@
 }
 
 .news-rail__more {
+  flex: none;
   display: block;
   border-top: 1px solid #e8e8e8;
   padding-top: 6px;

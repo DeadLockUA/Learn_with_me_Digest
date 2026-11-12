@@ -1,5 +1,7 @@
 {%- comment -%}
-  Left rail: latest 3 "News Around the World" days, newest open, older folded.
+  Left rail: latest "News Around the World" days, first 3 open, older folded.
+  Fills the left gutter from the top of <main> to the footer; a script hides whole headlines/days
+  from the bottom until the rest fits, so the rail never makes the page longer.
   Headlines come from each day's list items: first link = href + text, "Source — " prefix dropped.
   A doc's content may still be Markdown when this renders (render order), so it is markdownified if it has no <li> yet.
 {%- endcomment -%}
@@ -8,11 +10,12 @@
 <aside class="news-rail" aria-label="News Around the World">
   <a class="news-rail__mast" href="{{ '/news/' | relative_url }}">News Around the World</a>
   <div class="news-rail__sub">Daily, from the sources I follow</div>
-  {%- for day in news_days limit: 3 -%}
+  <div class="news-rail__days">
+  {%- for day in news_days limit: 30 -%}
     {%- assign day_html = day.content -%}
     {%- unless day_html contains "<li" -%}{%- assign day_html = day_html | markdownify -%}{%- endunless -%}
     {%- assign day_items = day_html | split: "<li>" %}
-  <details class="news-rail__day"{% if forloop.first %} open{% endif %}>
+  <details class="news-rail__day"{% if forloop.index <= 3 %} open{% endif %}>
     <summary>{{ day.date | date: "%A" }}<span>{{ day.date | date: "%-d %b" }} · {{ day_items.size | minus: 1 }}</span></summary>
     <ul>
       {%- for part in day_items offset: 1 -%}
@@ -29,6 +32,28 @@
     </ul>
   </details>
   {%- endfor %}
+  </div>
   <a class="news-rail__more" href="{{ '/news/' | relative_url }}">All days →</a>
 </aside>
+<script>
+(function () {
+  var box = document.currentScript.previousElementSibling.querySelector('.news-rail__days');
+  if (!box) return;
+  var shown = function (el) { return !el.hidden; };
+  function fit() {
+    if (!box.offsetParent) return; // rail hidden on narrow screens
+    box.querySelectorAll('[hidden]').forEach(function (el) { el.hidden = false; });
+    var days = Array.prototype.slice.call(box.querySelectorAll('.news-rail__day'));
+    while (box.scrollHeight > box.clientHeight + 1) {
+      var day = days.filter(shown).pop();
+      if (!day) break;
+      var items = day.open ? Array.prototype.slice.call(day.querySelectorAll('li')).filter(shown) : [];
+      if (items.length > 1) items.pop().hidden = true; else day.hidden = true;
+    }
+  }
+  box.addEventListener('toggle', fit, true);
+  if (window.ResizeObserver) new ResizeObserver(fit).observe(box); else window.addEventListener('resize', fit);
+  fit();
+})();
+</script>
 {%- endif -%}
