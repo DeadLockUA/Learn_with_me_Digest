@@ -1,5 +1,6 @@
-// Duck facts widget: a non-interactive mascot that "says" sourced facts in a speech bubble.
-import { createCycler, holdMs } from "./duck-core.js";
+// Duck facts widget: a mascot that "says" sourced facts in a speech bubble.
+// A fact stays up for a minute; clicking the duck (or Enter/Space on it) shows the next one.
+import { createCycler, createSkippableWait, HOLD_MS } from "./duck-core.js";
 
 const BASE = new URL("./", import.meta.url);
 const PAUSE_MS = 1500;
@@ -50,7 +51,7 @@ function build() {
   const text = el("p", {}, bubble);
   const source = el("a", { class: "duck-source", target: "_blank", rel: "noopener" }, bubble);
   source.textContent = "source";
-  const stage = el("div", { class: "duck-stage" }, root);
+  const stage = el("div", { class: "duck-stage", role: "button", tabindex: "0", "aria-label": "Show the next duck fact" }, root);
   el("img", { src: new URL("poster.png", BASE).href, alt: "Rubber duck mascot with AR glasses", width: "200", height: "200" }, stage);
   document.body.appendChild(root);
   return { bubble, text, source, stage };
@@ -109,6 +110,14 @@ async function run() {
     return;
   }
   const cycler = createCycler(facts);
+  const waiter = createSkippableWait(visibleWait);
+  ui.stage.addEventListener("click", () => waiter.skip());
+  ui.stage.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      waiter.skip();
+    }
+  });
   for (;;) {
     const fact = cycler.next();
     if (!fact) return;
@@ -117,9 +126,9 @@ async function run() {
     ui.source.title = fact.source_title || "";
     ui.bubble.classList.add("is-on");
     react(fact.reaction);
-    await visibleWait(holdMs(fact.text));
+    await waiter.wait(HOLD_MS);
     ui.bubble.classList.remove("is-on");
-    await visibleWait(PAUSE_MS);
+    await waiter.wait(PAUSE_MS);
   }
 }
 
