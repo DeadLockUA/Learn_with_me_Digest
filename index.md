@@ -80,7 +80,7 @@ Browse by topic:
   {% endfor %}
 </ul>
 <style>
-.post-list-home { display: grid; grid-template-columns: auto minmax(0, max-content) max-content; column-gap: 0.6em; align-items: baseline; list-style: none; }
+.post-list-home { display: grid; justify-content: start; grid-template-columns: auto minmax(0, max-content) max-content; column-gap: 0.6em; align-items: baseline; list-style: none; }
 .post-list-home li { display: contents; }
 .post-list-home li::before { content: "•"; }
 .post-list-home .home-post-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
