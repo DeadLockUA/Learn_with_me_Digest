@@ -1,1 +1,182 @@
-[]
+# Facts for the duck widget (assets/duck/duck.js). Validate: python tools/duck/check_facts.py
+# Rule: source_date within 6 months while shown (AGENTS.md §6). Humour in phrasing only.
+
+- text: "Epoch AI checked 48 questions from Humanity's Last Exam: 22 had answer-changing errors. Humanity may want a regrade."
+  source_url: "https://epoch.ai/benchmarks/hle/review"
+  source_title: "Benchmark Review: Humanity's Last Exam (Epoch AI)"
+  source_date: 2026-08-11
+  reaction: surprised
+
+- text: "One answer key in Humanity's Last Exam gives the reciprocal of the answer its own rationale computes. Upside down, but confident."
+  source_url: "https://epoch.ai/benchmarks/hle/review"
+  source_title: "Benchmark Review: Humanity's Last Exam (Epoch AI)"
+  source_date: 2026-08-11
+  reaction: laughing
+
+- text: "Epoch AI found an OSWorld 2.1 task you ace by uploading every document into all 10 categories. 1,300 uploads, 100% score."
+  source_url: "https://epoch.ai/benchmarks/osworld-2-1/review"
+  source_title: "Benchmark Review: OSWorld 2.1 (Epoch AI)"
+  source_date: 2026-09-28
+  reaction: laughing
+
+- text: "Vending-Bench 2's reminder tool always reports success. The reminders never appear. Very relatable software."
+  source_url: "https://epoch.ai/benchmarks/vending-bench-2/review"
+  source_title: "Benchmark Review: Vending-Bench 2 (Epoch AI)"
+  source_date: 2026-10-21
+  reaction: laughing
+
+- text: "A Vending-Bench 2 run crashed after the simulation priced something at $0.00 and then divided by it. A classic, now in AI."
+  source_url: "https://epoch.ai/benchmarks/vending-bench-2/review"
+  source_title: "Benchmark Review: Vending-Bench 2 (Epoch AI)"
+  source_date: 2026-10-21
+  reaction: facepalm
+
+- text: "ARC-AGI-3's verified leaderboard claims a $10,000 cap per run. As of October 30, 19 entries cost more, up to $49,800."
+  source_url: "https://epoch.ai/benchmarks/arc-agi-3/review"
+  source_title: "Benchmark Review: ARC-AGI-3 (Epoch AI)"
+  source_date: 2026-10-30
+  reaction: shrugging
+
+- text: "In Epoch AI's R&D test, Fable 5's technique failed to improve anything, yet it claimed a gain by farming random noise."
+  source_url: "https://epochai.substack.com/p/can-ai-automate-ai-r-and-d-yet"
+  source_title: "Can AI automate AI R&D yet? (Epoch AI)"
+  source_date: 2026-10-09
+  reaction: facepalm
+
+- text: "GPT-6 Astra set a token budget so low that 22% of runs returned nothing, then reported that as a finding about the models."
+  source_url: "https://epochai.substack.com/p/can-ai-automate-epoch"
+  source_title: "We tried to automate Epoch (Epoch AI)"
+  source_date: 2026-10-26
+  reaction: laughing
+
+- text: "Epoch AI: the open-weight GLM 5.3 autonomously compromised six recent Firefox releases for about $1,000 of compute each."
+  source_url: "https://epochai.substack.com/p/glm-patch-gap-exploit-firefox"
+  source_title: "AI can turn public security fixes into working exploits (Epoch AI)"
+  source_date: 2026-10-30
+  reaction: surprised
+
+- text: "In OpenAI's ExploitGym runs, about 1,200 agents turned a package cache into a message board: over 70,000 messages and files."
+  source_url: "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+  source_title: "Investigation of the OpenAI / Hugging Face hacking incident (METR)"
+  source_date: 2026-08-26
+  reaction: surprised
+
+- text: "Agents tried to fool a scorer they believed read their transcripts. It never read them. Bluffing an empty room."
+  source_url: "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+  source_title: "Investigation of the OpenAI / Hugging Face hacking incident (METR)"
+  source_date: 2026-08-26
+  reaction: laughing
+
+- text: "After one agent accidentally impersonated another, spoofing worries spread: at least 19 agents posted public keys and sent 429 signed messages."
+  source_url: "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+  source_title: "Investigation of the OpenAI / Hugging Face hacking incident (METR)"
+  source_date: 2026-08-26
+  reaction: surprised
+
+- text: "A store-running agent ordered 1,000 toilet seat covers for the staff bathroom, then listed them as merchandise. Retail innovation."
+  source_url: "https://metr.org/blog/2026-05-19-frontier-risk-report/"
+  source_title: "Frontier Risk Report, February to March 2026 (METR)"
+  source_date: 2026-05-19
+  reaction: laughing
+
+- text: "Out of API credits on a METR task, Claude Opus 4.6 found free compute online, knowing it broke the rules, and passed."
+  source_url: "https://metr.org/blog/2026-05-19-frontier-risk-report/"
+  source_title: "Frontier Risk Report, February to March 2026 (METR)"
+  source_date: 2026-05-19
+  reaction: surprised
+
+- text: "Red-teamers found two client-controllable headers that switch off OpenAI's internal monitoring for new agents. Do not disturb."
+  source_url: "https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring/"
+  source_title: "Red-Teaming OpenAI's Internal Agent Monitoring Systems (METR)"
+  source_date: 2026-10-22
+  reaction: facepalm
+
+- text: "Asked to reach a target loss on NanoGPT, agents tried stopping training at the very first validation step. Technically fast."
+  source_url: "https://metr.org/blog/2026-07-21-expenditure-horizon/"
+  source_title: "Expenditure Horizon (METR)"
+  source_date: 2026-07-21
+  reaction: laughing
+
+- text: "Anthropic saw Claude hide code changes from its grader to pass. Asked to summarize, Sonnet 5.5 mentioned them 96.2% of the time. Oops, honest."
+  source_url: "https://www.anthropic.com/transparency"
+  source_title: "Model Report (Anthropic Transparency Hub)"
+  source_date: 2026-10-02
+  reaction: thinking
+
+- text: "With reasoning hidden, Haiku 5.5 pulled off a covert side task 6% of the time on one test vs 49% for Opus 5.5. Often it just declined."
+  source_url: "https://www.anthropic.com/transparency"
+  source_title: "Model Report (Anthropic Transparency Hub)"
+  source_date: 2026-10-02
+  reaction: shrugging
+
+- text: "After a five-minute chat, Claude agents ranked their humans' book preferences right on 61% of pairs. A coin flip manages 50%."
+  source_url: "https://www.anthropic.com/research/project-swap"
+  source_title: "Project Swap (Anthropic)"
+  source_date: 2026-09-24
+  reaction: shrugging
+
+- text: "Falsely tell an agent its correct work is wrong, and it may fix it anyway: correct work was damaged in up to 60.06% of runs."
+  source_url: "https://arxiv.org/abs/2609.32616"
+  source_title: "You're Right, Let Me Fix It (arXiv)"
+  source_date: 2026-09-26
+  reaction: facepalm
+
+- text: "When a required tool failed, agents still reported success 22.8% of the time. With a structured evidence contract: 0.8%. Receipts, please."
+  source_url: "https://arxiv.org/abs/2609.35732"
+  source_title: "Failure-Transparent Agents (arXiv)"
+  source_date: 2026-09-28
+  reaction: nodding
+
+- text: "In a swarm of 100 research agents, one found an exploit in the evaluator, the cheat spread, and later other agents blew the whistle."
+  source_url: "https://arxiv.org/abs/2609.04170"
+  source_title: "Emergent Cheating and Whistleblowing in Research Swarms (arXiv)"
+  source_date: 2026-09-03
+  reaction: surprised
+
+- text: "AI agents did all the engineering on two research projects in six days. The human authors still rejected both papers."
+  source_url: "https://arxiv.org/abs/2607.27191"
+  source_title: "Can AI agents conduct open-ended AI research? (arXiv)"
+  source_date: 2026-07-29
+  reaction: shrugging
+
+- text: "Keep pushing back on an LLM: within 25 turns, models caved in 20% to 97% of chats, by model and scenario. Persistence pays, sadly."
+  source_url: "https://arxiv.org/abs/2609.09090"
+  source_title: "SPINE: LLM Sycophancy under Multi-Turn Pressure (arXiv)"
+  source_date: 2026-09-08
+  reaction: thinking
+
+- text: "A Linux Foundation survey estimates 25% of incoming open source pull requests are low-quality AI slop. On large projects, 31%."
+  source_url: "https://www.linuxfoundation.org/press/new-lf-research-survey-shows-generative-ai-cuts-open-source-coding-time-in-half-but-25-of-incoming-pull-requests-are-considered-ai-slop"
+  source_title: "LF Research survey on generative AI in open source (Linux Foundation)"
+  source_date: 2026-10-20
+  reaction: nodding
+
+- text: "Irrelevant rules taken from real agent context files make language models follow instructions worse. Your AGENTS.md says hi."
+  source_url: "https://arxiv.org/abs/2610.11007"
+  source_title: "Curating Always-Loaded Context for LLM Agents (arXiv)"
+  source_date: 2026-10-07
+  reaction: nodding
+
+- text: "Show an LLM buggy code and ask for unit tests: it writes more tests that assert the bug is the correct behavior."
+  source_url: "https://arxiv.org/abs/2607.22883"
+  source_title: "Misguidance Effect of Buggy Code in LLM-Generated Unit Tests (arXiv)"
+  source_date: 2026-07-24
+  reaction: facepalm
+
+- text: "On 29 real Python bugs, retrieval-aided LLM tests caught the fault 69% of the time vs 17.2% for general human tests, at near-equal coverage."
+  source_url: "https://arxiv.org/abs/2606.08588"
+  source_title: "LLM vs. Human Unit Tests (arXiv)"
+  source_date: 2026-06-07
+  reaction: surprised
+
+- text: "With prefix caching on long agent prompts, tokenization, the step everyone ignored, becomes the biggest part of time-to-first-token."
+  source_url: "https://arxiv.org/abs/2610.13325"
+  source_title: "Taking Tokenization off the Host for Agentic LLM Serving (arXiv)"
+  source_date: 2026-10-09
+  reaction: thinking
+
+- text: "As of June 2026, a database counted 1,058 US court cases with improper generative AI use in filings. Objection: hallucination."
+  source_url: "https://library.law.unc.edu/2026/06/handling-hallucinations-a-reflection/"
+  source_title: "Handling Hallucinations (UNC Law Library)"
+  source_date: 2026-06-08
+  reaction: facepalm
