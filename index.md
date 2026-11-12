@@ -29,6 +29,9 @@ Browse by topic:
 @media (max-width: 600px) {
   .category-grid { grid-template-columns: repeat(2, 1fr); }
 }
+@media (min-width: 1300px) {
+  .category-grid { grid-template-columns: repeat(5, 1fr); }
+}
 .category-button {
   display: block;
   text-align: center;
