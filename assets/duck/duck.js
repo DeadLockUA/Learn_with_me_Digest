@@ -1,5 +1,5 @@
 // Duck facts widget: a non-interactive mascot that "says" sourced facts in a speech bubble.
-import { activeFacts, createCycler, holdMs } from "./duck-core.js";
+import { createCycler, holdMs } from "./duck-core.js";
 
 const BASE = new URL("./", import.meta.url);
 const PAUSE_MS = 1500;
@@ -99,7 +99,8 @@ async function run() {
   try {
     const res = await fetch(new URL("facts.json", BASE));
     if (!res.ok) return;
-    facts = activeFacts(await res.json(), new Date());
+    const data = await res.json();
+    facts = Array.isArray(data) ? data.filter((f) => f && f.text) : [];
   } catch {
     return;
   }

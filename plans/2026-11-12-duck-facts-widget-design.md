@@ -82,11 +82,9 @@ quietly shows the digest's topic area.
 - If the video model can't deliver usable clips (off-model duck, loop seam,
   drifting background): stop, show the failed clips, and ask the owner — no
   automatic fallback (2026-11-12).
-- The 6-month recency rule applies for as long as a fact is shown
-  (2026-11-12): each fact has a `source_date`; the build drops facts whose
-  source is older than 6 months; fresh facts are added quarterly to keep the
-  pool topped up. If fewer than 30 sourced facts exist within 6 months, ship
-  what exists and say so — don't reach for older sources.
+- Recency (2026-11-12, replaces "while shown"): the 6-month rule is checked when
+  facts are added; facts are NOT hidden as they age. The whole list is refreshed
+  quarterly (owner, gate 2).
 
 ## Builder's calls (marked as such)
 

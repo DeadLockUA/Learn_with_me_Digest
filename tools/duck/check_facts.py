@@ -1,6 +1,9 @@
 """Validate _data/duck_facts.yml for the duck facts widget.
 
 Usage: python tools/duck/check_facts.py [path]   (exit 1 on errors)
+
+Run when facts are added or refreshed (quarterly): the 6-month age check applies
+at that moment. Facts are NOT hidden as they age on the site (owner, 2026-11-12).
 """
 import sys
 from datetime import date

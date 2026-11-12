@@ -1,5 +1,6 @@
 # Facts for the duck widget (assets/duck/duck.js). Validate: python tools/duck/check_facts.py
-# Rule: source_date within 6 months while shown (AGENTS.md §6). Humour in phrasing only.
+# Rule: source_date within 6 months when added (AGENTS.md §6); refresh the whole list quarterly.
+# Facts are not hidden as they age (owner, 2026-11-12). Humour in phrasing only.
 
 - text: "Epoch AI checked 48 questions from Humanity's Last Exam: 22 had answer-changing errors. Humanity may want a regrade."
   source_url: "https://epoch.ai/benchmarks/hle/review"

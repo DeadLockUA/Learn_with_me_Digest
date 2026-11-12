@@ -1,26 +1,12 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { activeFacts, shuffle, holdMs, createCycler } from "../../assets/duck/duck-core.js";
+import { shuffle, holdMs, createCycler } from "../../assets/duck/duck-core.js";
 
-const NOW = new Date("2026-11-12T12:00:00Z");
-const daysAgo = (n) => new Date(NOW.getTime() - n * 86400000).toISOString().slice(0, 10);
-const f = (text, date = daysAgo(1)) => ({ text, source_date: date });
+const f = (text) => ({ text });
 
 function seeded(seed) {
   return () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
 }
-
-test("activeFacts keeps 183 days, drops 184, future and invalid", () => {
-  const kept = activeFacts(
-    [f("a", daysAgo(183)), f("b", daysAgo(184)), f("c", daysAgo(-2)), f("d", "nope"), f("e", null)],
-    NOW
-  );
-  assert.deepEqual(kept.map((x) => x.text), ["a"]);
-});
-
-test("activeFacts handles non-array input", () => {
-  assert.deepEqual(activeFacts(null, NOW), []);
-});
 
 test("shuffle is deterministic with seeded rng, a permutation, non-mutating", () => {
   const input = [1, 2, 3, 4, 5, 6];
