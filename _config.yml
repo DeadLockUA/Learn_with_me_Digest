@@ -31,6 +31,7 @@ header_pages:
 # per-entry images — not Jekyll content, keep them out of the build.
 exclude:
   - entries
+  - tools
   - Gemfile
   - Gemfile.lock
   - README.md
