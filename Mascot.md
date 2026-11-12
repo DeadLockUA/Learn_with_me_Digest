@@ -55,6 +55,29 @@ POST https://openrouter.ai/api/v1/images
   text alone lets the look drift between models.
 - Keep the closing no-logos instruction.
 
+## How to animate it
+
+Used for the site-wide duck facts widget (owner, 2026-11-12). Tooling:
+[tools/duck/gen_clip.py](tools/duck/gen_clip.py) and
+[tools/duck/process_clip.sh](tools/duck/process_clip.sh).
+
+- Start frame: the duck on a plain off-white background (`#fdfdfd`), made
+  from the reference image with an image model (`gen_clip.py frame`). Image
+  models may return WebP under any file name, so convert it to a real PNG
+  before you send it to a video model (Veo rejects a mislabelled file).
+- Video: OpenRouter `POST /api/v1/videos` (async: submit, poll, download).
+  Pass the start frame as both `first_frame` and `last_frame` in
+  `frame_images`, so every clip begins and ends on the same calm pose and
+  loops without a seam.
+- Model: `google/veo-3.1-fast` (`OPENROUTER_VIDEO_MODEL` in `.env`), chosen
+  by the owner on 2026-11-12 after an idle-clip comparison of 7 models. It
+  supports 16:9 only; `process_clip.sh` crops the center to a square.
+- In the `surprised` and `laughing` clips the duck shows small feet when it
+  hops. The owner accepted this on 2026-11-12, so it is an allowed exception
+  to "no feet" for animation only.
+- Video generation is expensive. Never re-run it without the owner's
+  go-ahead.
+
 ## Status
 
 - Part of the Designer pipeline since 2026-11-11 (owner): every entry image
