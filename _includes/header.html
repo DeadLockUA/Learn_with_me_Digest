@@ -12,13 +12,16 @@
       .site-header .wrapper { display: flex; align-items: center; justify-content: space-between; }
       .site-header .wrapper::after { display: none; }
       @media screen and (min-width: 600px) {
-        .site-nav { float: none; line-height: normal; white-space: nowrap; }
-        .site-nav .trigger { display: flex; gap: clamp(10px, 2vw, 20px); }
+        .site-nav { float: none; line-height: normal; margin-left: 16px; }
+        .site-nav .trigger { display: flex; flex-wrap: wrap; justify-content: flex-end; column-gap: 14px; row-gap: 2px; }
+        .site-nav .page-link { font-size: 15px; white-space: nowrap; }
         .site-nav .page-link:not(:last-child) { margin-right: 0; }
       }
-      @media screen and (min-width: 600px) and (max-width: 820px) {
+      /* Narrow desktop: shrink first; below ~680px the nav wraps to a second right-aligned row. */
+      @media screen and (min-width: 600px) and (max-width: 900px) {
         .site-logo img { height: 36px; }
-        .site-nav .page-link { font-size: 14px; }
+        .site-nav .trigger { column-gap: 10px; }
+        .site-nav .page-link { font-size: 13px; }
       }
       @media screen and (max-width: 600px) { .site-nav { top: 12px; } }
     </style>
@@ -35,6 +38,7 @@
         </label>
 
         <div class="trigger">
+          <a class="page-link" href="{{ "/" | relative_url }}">Home</a>
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- if my_page.title -%}
