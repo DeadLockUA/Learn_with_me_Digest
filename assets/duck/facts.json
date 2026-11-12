@@ -1,0 +1,6 @@
+---
+layout: null
+---
+[{% for f in site.data.duck_facts %}
+  {"text": {{ f.text | jsonify }}, "source_url": {{ f.source_url | jsonify }}, "source_title": {{ f.source_title | jsonify }}, "source_date": {{ f.source_date | date: "%Y-%m-%d" | jsonify }}, "reaction": {{ f.reaction | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}
+]

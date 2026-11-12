@@ -1,0 +1,97 @@
+/* Duck facts widget. Shown only where it fits beside minima's 740px column; top leaves room for a 6-line bubble. */
+.duck-widget {
+  display: none;
+}
+
+@media (min-width: 1300px) {
+  .duck-widget {
+    display: block;
+    position: absolute;
+    top: 360px;
+    left: calc(75% + 85px); /* centered in the right gutter */
+    width: 200px;
+    z-index: 10;
+    pointer-events: none;
+  }
+}
+
+.duck-stage {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.duck-stage img,
+.duck-stage video {
+  position: absolute;
+  inset: 0;
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  background: #fdfdfd;
+}
+
+.duck-stage video {
+  opacity: 0;
+}
+
+.duck-stage video.is-on {
+  opacity: 1;
+}
+
+.duck-bubble {
+  position: absolute;
+  bottom: 214px;
+  z-index: 2;
+  left: -30px;
+  width: 260px;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  background: #fff;
+  border: 2px solid #111;
+  border-radius: 16px;
+  font-size: 14px;
+  line-height: 1.35;
+  color: #111;
+  box-shadow: 3px 3px 0 #111;
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.duck-bubble.is-on {
+  opacity: 1;
+  transform: none;
+}
+
+.duck-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 120px;
+  border-width: 12px 10px 0 10px;
+  border-style: solid;
+  border-color: #111 transparent transparent transparent;
+}
+
+.duck-bubble p {
+  margin: 0;
+}
+
+.duck-source {
+  display: inline-block;
+  margin-top: 4px;
+  font-size: 11px;
+  color: #2a7ae2;
+  pointer-events: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .duck-bubble {
+    transition: none;
+    transform: none;
+  }
+  .duck-stage video {
+    display: none;
+  }
+}
