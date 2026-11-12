@@ -89,6 +89,14 @@ Browse by topic:
 .post-list-home .home-post-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .post-list-home .post-topics { margin-left: 0.9em; white-space: nowrap; }
 .post-topics { color: #828282; font-size: 0.9em; }
+/* Phones: full width, no bullets; full title wraps, tags on their own line below. */
+@media (max-width: 800px) {
+  .post-list-home { display: block; margin-left: 0; }
+  .post-list-home li { display: block; padding: 7px 0; }
+  .post-list-home li::before { content: none; }
+  .post-list-home .home-post-title { display: block; white-space: normal; line-height: 1.3; }
+  .post-list-home .post-topics { display: block; margin: 2px 0 0; }
+}
 </style>
 {% else %}
 <p>No entries yet.</p>
