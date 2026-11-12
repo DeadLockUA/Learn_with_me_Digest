@@ -17,6 +17,8 @@
 
 .duck-stage {
   position: relative;
+  pointer-events: auto;
+  cursor: pointer;
   width: 200px;
   height: 200px;
 }
@@ -60,6 +62,9 @@
 }
 
 .duck-bubble.is-on {
+  pointer-events: auto;
+  user-select: text;
+  -webkit-user-select: text;
   opacity: 1;
   transform: none;
 }
@@ -94,4 +99,10 @@
   .duck-stage video {
     display: none;
   }
+}
+
+.duck-stage:focus-visible {
+  outline: 2px solid #2a7ae2;
+  outline-offset: 4px;
+  border-radius: 12px;
 }

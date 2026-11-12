@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { shuffle, holdMs, createCycler } from "../../assets/duck/duck-core.js";
+import { shuffle, createCycler, createSkippableWait, HOLD_MS } from "../../assets/duck/duck-core.js";
 
 const f = (text) => ({ text });
 
@@ -17,16 +17,36 @@ test("shuffle is deterministic with seeded rng, a permutation, non-mutating", ()
   assert.deepEqual(input, [1, 2, 3, 4, 5, 6]);
 });
 
-test("holdMs bounds and monotonic", () => {
-  assert.equal(holdMs(""), 8000);
-  assert.equal(holdMs("x".repeat(160)), 12000);
-  assert.equal(holdMs("x".repeat(500)), 12000);
-  let prev = 0;
-  for (let n = 0; n <= 160; n += 10) {
-    const v = holdMs("x".repeat(n));
-    assert.ok(v >= prev && v >= 8000 && v <= 12000);
-    prev = v;
-  }
+test("HOLD_MS is one minute", () => {
+  assert.equal(HOLD_MS, 60000);
+});
+
+const never = () => new Promise(() => {});
+const after = (ms) => new Promise((r) => setTimeout(r, ms));
+
+test("skippable wait resolves on skip before the timer", async () => {
+  const w = createSkippableWait(never);
+  let done = false;
+  const p = w.wait(60000).then(() => (done = true));
+  await after(5);
+  assert.equal(done, false);
+  w.skip();
+  await p;
+  assert.equal(done, true);
+});
+
+test("skippable wait resolves on its timer", async () => {
+  const w = createSkippableWait((ms) => after(ms));
+  await w.wait(5);
+});
+
+test("skip with nothing pending is a no-op and does not skip the next wait", async () => {
+  const w = createSkippableWait((ms) => after(ms));
+  w.skip();
+  let done = false;
+  w.wait(40).then(() => (done = true));
+  await after(10);
+  assert.equal(done, false);
 });
 
 test("createCycler on empty returns null", () => {
