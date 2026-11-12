@@ -77,6 +77,8 @@ quietly shows the digest's topic area.
 - On **every page** of the site — home, posts, topic pages, news, About
   (2026-11-12, replaces the earlier "home page only").
 - 30 pre-generated facts about LLMs etc.
+- Reaction set (gate 1, 2026-11-12): `surprised`, `laughing`, `nodding`,
+  `thinking`, `facepalm` (with a wing), `shrugging` (wing nubs) + `idle` loop.
 - If the video model can't deliver usable clips (off-model duck, loop seam,
   drifting background): stop, show the failed clips, and ask the owner — no
   automatic fallback (2026-11-12).
@@ -106,7 +108,7 @@ quietly shows the digest's topic area.
   the owner in a table to pick (mirrors the AGENTS.md §8 image rule).
 - Hologram panel: kept in every clip so the duck stays on-model — "?" in idle
   and `thinking`, "!" in `surprised`, check mark in `nodding`, "?" or blank
-  glow in `laughing` — *builder's call*; the owner sees it when picking clips.
+  glow in `laughing`, "!" in `facepalm`, "?" in `shrugging` — *builder's call*; the owner sees it when picking clips.
 - Second duck: the home banner already shows the duck; the owner placed the
   widget beside it knowingly (screenshot), so two ducks are intended.
 - Owner gates, in order, each a hard stop before the step that depends on

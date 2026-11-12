@@ -15,13 +15,13 @@
 - Duck box: 200×200 px. Shown only at viewport width ≥ 1240 px; hidden below.
 - Every page of the site (home, posts, topic pages, news, About).
 - Not interactive: no click/drag/dismiss/hover/chat/sound. The "source" link is the only clickable element.
-- Reactions (proposal, owner gate 1): `surprised`, `laughing`, `nodding`, `thinking`; plus `idle` loop.
+- Reactions (owner gate 1, 2026-11-12): `surprised`, `laughing`, `nodding`, `thinking`, `facepalm`, `shrugging`; plus `idle` loop.
 - Fact fields: `text`, `source_url`, `source_title`, `source_date` (YYYY-MM-DD), `reaction`.
 - Recency: a fact is shown only while `source_date` is ≤ 183 days old (runtime filter). Never add a source older than 6 months.
 - Humour in phrasing only; never bend the fact. No fabricated claims (AGENTS.md §6).
 - Bubble hold time: 8–12 s scaled by text length; fade out; short pause; next fact. Random order per page load; loops forever.
 - `prefers-reduced-motion: reduce` → still poster frame, facts still rotate, no fade/bob animation.
-- Clips: on-model per [Mascot.md](../Mascot.md), seeded from `assets/images/mascot/duck-reference.png`, prompt forbids logos/trademarks, white page background (`#fdfdfd`), hologram panel kept ("?" idle/thinking, "!" surprised, check mark nodding).
+- Clips: on-model per [Mascot.md](../Mascot.md), seeded from `assets/images/mascot/duck-reference.png`, prompt forbids logos/trademarks, white page background (`#fdfdfd`), hologram panel kept ("?" idle/thinking, "!" surprised, check mark nodding, "!" facepalm, "?" shrugging).
 - Clips lazy-loaded; must not slow page load.
 - Video model fails (off-model, loop seam, drifting background) → stop, show clips, ask owner. No automatic fallback.
 - English only in all committed files. Feature branch `feature/duck-facts-widget`; owner reviews before merge.
@@ -48,7 +48,7 @@
 - Modify: `_config.yml` — add `tools` to `exclude`
 
 **Interfaces:**
-- Produces: `validate(facts: list[dict], today: date) -> list[str]` (error strings, empty = valid); CLI `python tools/duck/check_facts.py [path]` exits 1 on errors. `REACTIONS = {"surprised","laughing","nodding","thinking"}`, `MAX_AGE_DAYS = 183`, `MAX_TEXT = 160`.
+- Produces: `validate(facts: list[dict], today: date) -> list[str]` (error strings, empty = valid); CLI `python tools/duck/check_facts.py [path]` exits 1 on errors. `REACTIONS = {"surprised","laughing","nodding","thinking","facepalm","shrugging"}`, `MAX_AGE_DAYS = 183`, `MAX_TEXT = 160`.
 
 - [ ] **Step 1: Write failing tests** in `test_check_facts.py` (pytest):
   - `test_valid_fact_passes` — one complete fact dated `today - 10d` → `[]`.
@@ -81,7 +81,7 @@
 ### Task 3: Video model probe + clip generation (owner gate 3)
 
 **Files:**
-- Create: `tools/duck/gen_clip.py`, `tools/duck/process_clip.sh`, `assets/duck/clips/{idle,surprised,laughing,nodding,thinking}.webm`, `assets/duck/clips/{same}.mp4`, `assets/duck/poster.png`
+- Create: `tools/duck/gen_clip.py`, `tools/duck/process_clip.sh`, `assets/duck/clips/{idle,surprised,laughing,nodding,thinking,facepalm,shrugging}.webm`, `assets/duck/clips/{same}.mp4`, `assets/duck/poster.png`
 - Modify: `.env` (add `OPENROUTER_VIDEO_MODEL_*` names that work), `Mascot.md` ("How to animate it" section with the working call)
 
 **Interfaces:**
@@ -91,7 +91,7 @@
 - [ ] **Step 2:** Implement `gen_clip.py --model <id> --reaction <name> --out <path>`: sends `duck-reference.png` + prompt (character sheet from Mascot.md, the reaction, hologram content per Global Constraints, plain `#fdfdfd` background, static camera, start/end on neutral idle pose, "Avoid any logos or trademarked brand marks"). Key from `.env`, never printed.
 - [ ] **Step 3:** Generate `idle` with every working model, in parallel, ≤3 attempts per model. If none is usable → stop, show clips, ask owner (spec rule).
 - [ ] **Step 4:** Implement `process_clip.sh <in> <name>`: ffmpeg crop/scale to 400×400, trim to ≤4 s, VP9 WebM (`-crf 34 -b:v 0`, no audio) + H.264 MP4 fallback (`-an -movflags +faststart`); for idle also extract `poster.png`. Check each file ≤ 600 KB.
-- [ ] **Step 5:** Owner gate 3: table model → idle clip (paths); owner picks a model. Then generate the 4 reactions with that model, process, show, owner approves. Stop until approved.
+- [ ] **Step 5:** Owner gate 3: table model → idle clip (paths); owner picks a model. Then generate the 6 reactions with that model, process, show, owner approves. Stop until approved.
 - [ ] **Step 6:** Commit `assets(duck): mascot clips and generator tooling`.
 
 ### Task 4: Widget core logic (pure, tested)
