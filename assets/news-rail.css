@@ -4,6 +4,11 @@
 }
 
 @media (min-width: 1300px) {
+  /* Wide screens: content column ~50% of the screen (minima default 740px is the floor), side strips ~25% each. */
+  .wrapper {
+    max-width: max(740px, calc(50vw - 60px));
+  }
+
   .page-content {
     position: relative;
   }
@@ -15,7 +20,7 @@
     top: 30px;    /* minima .page-content vertical padding */
     bottom: 30px;
     left: 16px;
-    right: calc(50% + 370px + 100px); /* 100px gap to the content column */
+    right: calc(50% + max(370px, 25vw - 30px) + 100px); /* 100px gap to the content column's text */
     padding-left: 12px;
     border-left: 3px solid #111;
     font-size: 13px;
