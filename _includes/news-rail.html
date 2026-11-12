@@ -19,12 +19,12 @@
         {%- assign href_parts = part | split: 'href="' -%}
         {%- if href_parts.size < 2 -%}{%- continue -%}{%- endif -%}
         {%- assign item_href = href_parts[1] | split: '"' | first -%}
-        {%- assign item_text = href_parts[1] | split: "</a>" | first | split: '">' | last | strip_html | strip -%}
+        {%- assign item_text = href_parts[1] | split: "</a>" | first | remove_first: item_href | remove_first: '">' | strip_html | strip -%}
         {%- assign text_parts = item_text | split: " — " -%}
         {%- if text_parts.size > 1 and text_parts[0].size <= 32 -%}
           {%- assign item_text = item_text | remove_first: text_parts[0] | remove_first: " — " -%}
         {%- endif %}
-      <li><a href="{{ item_href }}" title="{{ item_text | escape }}">{{ item_text }}</a></li>
+      <li><a href="{{ item_href }}" title="{{ item_text }}">{{ item_text }}</a></li>
       {%- endfor %}
     </ul>
   </details>
