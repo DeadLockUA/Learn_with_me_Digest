@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Duck widget preview</title>
+  <!-- Mimics minima 2.5: 740px centered column, #fdfdfd background, header. -->
+  <style>
+    body { margin: 0; background: #fdfdfd; color: #111; font: 400 16px/1.5 -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .site-header { border-top: 5px solid #424242; border-bottom: 1px solid #e8e8e8; min-height: 56px; }
+    .wrapper { max-width: 740px; margin: 0 auto; padding: 0 30px; box-sizing: content-box; }
+    .page-content { padding: 30px 0; }
+    .banner { height: 316px; background: #2c3e50; border-radius: 8px; }
+  </style>
+  <link rel="stylesheet" href="/assets/duck/duck.css">
+  <script type="module" src="/assets/duck/duck.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="wrapper"><h3>Learn with me Digest</h3></div></header>
+  <main class="page-content"><div class="wrapper">
+    <div class="banner"></div>
+    <script>
+      for (let i = 0; i < 40; i++) document.write("<p>Body text paragraph " + i + ". Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>");
+    </script>
+  </div></main>
+</body>
+</html>
