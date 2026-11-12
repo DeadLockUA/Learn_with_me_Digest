@@ -15,7 +15,7 @@
     top: 30px;    /* minima .page-content vertical padding */
     bottom: 30px;
     left: 16px;
-    right: calc(50% + 370px + 24px); /* 24px gap to the content column */
+    right: calc(50% + 370px + 100px); /* 100px gap to the content column */
     padding-left: 12px;
     border-left: 3px solid #111;
     font-size: 13px;
