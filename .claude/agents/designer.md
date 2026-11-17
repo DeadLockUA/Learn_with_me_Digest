@@ -73,8 +73,20 @@ only as "the key" if you need to mention it in a report.
    a question mark) or delivers its answer (the hologram shows a check mark
    or a short answer) - pick whichever fits the post. Warm cozy lighting on
    the scene, cyan glow only from the hologram, modern stylized 3D."`,
-   followed by a fixed closing instruction (owner, 2026-09-14): `"Avoid any
-   logos or trademarked brand marks in the image."`
+   followed by the layout instruction (owner, 2026-11-17 — standing format
+   for every entry, AGENTS.md §8): `"Layout: a tall portrait comic split
+   horizontally into three numbered panels (1, 2, 3) and a footer strip.
+   Panel 1: <problem caption>. Panel 2: <cause caption>. Panel 3: <fix
+   caption>. Footer, titled 'Did you know?': <fact>. Render all caption and
+   footer text exactly as given."`. Fill the four slots yourself before
+   sending: panel 1 — what the problem is; panel 2 — why it is a problem,
+   i.e. its cause; panel 3 — how to solve it, leaving the detail to the post
+   (a short "in the post" pointer is fine); footer — one interesting fact on
+   the topic, taken verbatim in substance from a source the blog post
+   itself cites, ending with the short source name (never an invented or
+   unsourced figure, AGENTS.md §6). Then a fixed closing instruction (owner,
+   2026-09-14): `"Avoid any logos or trademarked brand marks in the
+   image."`
    Every call also sends the reference image
    `assets/images/mascot/duck-reference.png` as a base64 data URL in
    `input_references`, as an object, not a plain string (a string returns
@@ -97,6 +109,10 @@ only as "the key" if you need to mention it in a report.
    - it hands over the full answer with nothing left to click for, or reads
      as nonsense to a newcomer ("what is this even about?") — either way it
      doesn't make anyone want to open the post.
+   Also flag a candidate that breaks the layout (owner, 2026-11-17): not
+   three stacked panels in problem → cause → fix order, no "Did you know?"
+   footer, or footer text that is garbled or no longer matches the sourced
+   fact you sent.
    A prompt that fails is rewritten before sending. A candidate that fails
    is still shown to the owner (no dropping), with each flagged text quoted
    and the reason, in the summary table.

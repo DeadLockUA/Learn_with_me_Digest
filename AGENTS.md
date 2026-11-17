@@ -203,6 +203,12 @@ Decided (owner, 2026-09-14): flat files, shared naming per entry
   and wants to open the post to learn more. No post-internal shorthand in
   image text. Designer's procedure for checking this is in
   [designer.md](.claude/agents/designer.md) step 1b.
+- Image layout (owner, 2026-11-17, standing for every entry): a portrait
+  comic split horizontally into three panels — top: the problem; middle:
+  why it is a problem (its cause); bottom: how to solve it — plus a
+  "Did you know?" footer with one interesting fact on the topic, sourced
+  from the post's own citations. Prompt wording and check: designer.md
+  steps 1 and 1b.
 
 ## 9. Git workflow
 
