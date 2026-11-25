@@ -3,7 +3,7 @@ layout: post
 title: "The Agent That Says \"About Ninety Minutes\" to Everything"
 date: 2026-10-28
 topics: [ai, processes]
-related_posts: [2026-09-09-estimating-the-triage-line, 2026-10-14-the-afternoon-i-lost-to-a-prompt, 2026-09-28-quality-per-token, 2026-09-17-a-batch-is-not-an-increment]
+related_posts: [2026-09-09-estimating-the-triage-line, 2026-10-14-the-afternoon-i-lost-to-a-prompt, 2026-09-28-quality-per-token, 2026-09-17-a-batch-is-not-an-increment, 2026-11-25-the-agent-says-pushed]
 image: /assets/images/entries/2026-10-28-the-agent-that-says-about-ninety-minutes.png
 ---
 
@@ -279,7 +279,9 @@ the log. Two uses:
   setup. Feed it back as a multiplier (section below).
 - A tell for self-grading drift: the write-up found Opus 4.8 and GPT-5.5 over-rated their
   own final scores by about 20%, while Opus 5 under-estimated by more than 10%. If the agent
-  can't score its own result, its time estimate for "finishing" is suspect too.
+  can't score its own result, its time estimate for "finishing" is suspect too. A later post
+  follows that thread to the claim of finishing itself:
+  [the agent says "pushed" — but there's no push]({% post_url 2026-11-25-the-agent-says-pushed %}).
 
 ## Making the agent factor it in
 
