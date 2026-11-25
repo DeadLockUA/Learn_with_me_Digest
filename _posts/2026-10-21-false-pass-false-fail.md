@@ -3,7 +3,7 @@ layout: post
 title: "False Pass vs False Fail: The Verifier Error Nobody Prices"
 date: 2026-10-21
 topics: [testing, ai]
-related_posts: [2026-09-28-quality-per-token, 2026-09-07-ai-assisted-testing-validation-layer, 2026-09-09-estimating-the-triage-line, 2026-11-03-update-the-inspectors-checklist]
+related_posts: [2026-09-28-quality-per-token, 2026-09-07-ai-assisted-testing-validation-layer, 2026-09-09-estimating-the-triage-line, 2026-11-03-update-the-inspectors-checklist, 2026-11-25-the-agent-says-pushed]
 image: /assets/images/entries/2026-10-21-false-pass-false-fail.jpg
 ---
 
@@ -27,6 +27,9 @@ two directions, because the two are priced by different people — and one of th
 not priced at all. It also leans on the [validation layer]({% post_url 2026-09-07-ai-assisted-testing-validation-layer %})
 post: the judge's verdict is itself something that has to be validated, and the direction of
 the error decides who ends up doing that.
+
+A later post follows the false pass one step upstream, to the agent's own closing message:
+[the agent says "pushed" — but there's no push]({% post_url 2026-11-25-the-agent-says-pushed %}).
 
 ## One number, two ledgers
 
